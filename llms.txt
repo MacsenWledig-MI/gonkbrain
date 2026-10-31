@@ -6,7 +6,7 @@
 
 - [The Floor, overview](https://gonkbrain.org/floor/): the idea, the bill, the funding, two short answers to the common objections.
 - [The Floor, plain text](https://gonkbrain.org/floor/the-floor.md): the full five-page pamphlet as Markdown.
-- [The Floor: Economic Package](https://gonkbrain.org/floor/economic-package.md): the costing and revenue design in full, with a source link for every figure (CBO, CMS, HUD, Census, USDA, OECD, KFF and others, as of October 2026).
+- [The Floor: Economic Package](https://gonkbrain.org/floor/package.html): the costing and revenue design in full (plain text: [economic-package.md](https://gonkbrain.org/floor/economic-package.md)), with a source link for every figure (CBO, CMS, HUD, Census, USDA, OECD, KFF and others, as of October 2026).
 - [Costing as data](https://gonkbrain.org/floor/data/costing.json): pillars, net new spending with ranges, revenue lines with yields and sources, transition milestones, key risks.
 - [What the Floor costs you](https://gonkbrain.org/floor/calculator.html): a household calculator; its arithmetic is in [ledger.js](https://gonkbrain.org/floor/ledger.js).
 - [The pamphlet as PDF](https://gonkbrain.org/floor/the-floor-october-2026.pdf): five Letter pages.
