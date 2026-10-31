@@ -1,0 +1,135 @@
+{
+  "name": "The Floor: costing and revenue package",
+  "version": "2026-10-28",
+  "license": "CC0-1.0",
+  "url": "https://gonkbrain.org/floor/",
+  "full_text": "https://gonkbrain.org/floor/economic-package.md",
+  "units": "USD billions per year, 2025 dollars, at full operation (year 8 of the transition) unless stated",
+  "summary": {
+    "net_new_public_spending": 2220,
+    "net_new_public_spending_range": [1730, 2430],
+    "share_of_2025_gdp": 0.072,
+    "private_and_state_spending_replaced": 2645,
+    "net_new_claim_on_real_resources": -40,
+    "net_new_claim_range": [-360, 390],
+    "gdp_2025_billions": 30861,
+    "gdp_source": "https://fred.stlouisfed.org/series/GDPA"
+  },
+  "pillars": [
+    {
+      "name": "Medical care",
+      "design": "One public payer covering every resident, no premiums, deductibles or copays; provider rates between Medicare and today's private average; global hospital budgets; negotiated drug prices; dental, vision, hearing; long-term care phased in from year six.",
+      "net_new_public_spending": 1800,
+      "range": [1400, 1900],
+      "long_term_care_additional": 500,
+      "private_and_state_spending_replaced": 2385,
+      "change_in_total_national_health_spending": -200,
+      "change_range": [-520, 230],
+      "basis": "CBO Working Paper 2020-08 options 3 and 4, scaled to CMS NHE 2024",
+      "sources": [
+        "https://www.cbo.gov/publication/56811",
+        "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet",
+        "https://www.acpjournals.org/doi/10.7326/M19-2818",
+        "https://www.oecd.org/en/publications/2025/11/health-at-a-glance-2025_a894f72e/full-report/indicator-overview-country-dashboards-and-major-trends_368ac397.html"
+      ]
+    },
+    {
+      "name": "Housing",
+      "design": "Housing First for everyone homeless; a rent guarantee so no household pays more than 30% of income for a modest home, as an entitlement; a federal Housing Development Authority building 200,000 permanently affordable homes a year, bond-financed; an owner backstop.",
+      "net_new_public_spending": 180,
+      "range": [140, 230],
+      "lines": {"housing_first": 10, "rent_guarantee": 130, "building_program_capital_grant_and_repair": 35, "owner_backstop": 5},
+      "construction_bond_financed_per_year": [50, 70],
+      "comparison_homeowner_tax_expenditures_per_year": 300,
+      "sources": [
+        "https://www.hud.gov/news/hud-no-26-037",
+        "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
+        "https://www.urban.org/research/publication/how-much-could-full-funding-and-use-housing-choice-vouchers-reduce-poverty",
+        "https://www.census.gov/housing/hvs/files/qtr326/Q326press.pdf",
+        "https://endhomelessness.org/resources/research-and-analysis/how-much-would-it-cost-to-provide-housing-first-to-all-households-staying-in-homeless-shelters/",
+        "https://stacks.cdc.gov/view/cdc/114852"
+      ]
+    },
+    {
+      "name": "Food",
+      "design": "A Floor card every resident holds, loaded with USDA's Thrifty Food Plan, full at or below the poverty line and tapering to zero at 250% of it, no application or conditions; universal free school meals; a food-recovery program.",
+      "net_new_public_spending": 150,
+      "range": [120, 190],
+      "lines": {"food_credit_gross": 232, "less_snap_fy2025": -103, "universal_school_meals": 13, "prepared_meals": 2, "food_recovery": 4},
+      "taper_sensitivity": {"end_at_200pct_fpl": 120, "end_at_300pct_fpl": 190},
+      "sources": [
+        "https://www.fna.usda.gov/sites/default/files/resource-files/snap-annualsummary-10.pdf",
+        "https://www.fna.usda.gov/sites/default/files/resource-files/CostofFoodSep2026Thrifty.pdf",
+        "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+        "https://refed.org/uploads/2026-food-waste-report-design-final-1.pdf",
+        "https://www.kff.org/state-health-policy-data/state-indicator/distribution-by-fpl/"
+      ]
+    },
+    {
+      "name": "Education",
+      "design": "Tuition- and fee-free public two- and four-year college for residents, first dollar, no income cap; states keep appropriations; Pell becomes a living-cost grant; free short credentials and training; an apprenticeship fund tripling active apprentices; expanded WIOA.",
+      "net_new_public_spending": 90,
+      "range": [70, 110],
+      "lines": {"tuition_replacement": 78, "capacity_grants": 5, "training_and_apprenticeships": 7},
+      "not_counted_extension_early_childhood": [100, 130],
+      "sources": [
+        "https://shef.sheeo.org/wp-content/uploads/2026/04/SHEF_FY25_Report.pdf",
+        "https://cew.georgetown.edu/resource/the-dollars-and-sense-of-free-college",
+        "https://www.apprenticeship.gov/sites/default/files/DOL_IndustryFactsheet_AboutUs_20260825.pdf"
+      ]
+    }
+  ],
+  "revenue": {
+    "tier_a_contributions_replacing_premiums": {
+      "total": 1520,
+      "lines": [
+        {"measure": "Employer health contribution, 7.5% of payroll above an employer's first $2 million", "yield": 610, "source": "https://www.sanders.senate.gov/download/options-to-finance-medicare-for-all", "note": "scaled to 2025 wages, https://fred.stlouisfed.org/data/A4102C1A027NBEA"},
+        {"measure": "Household health contribution, 4% of income above $20,000 single / $40,000 joint", "yield": 575, "source": "https://www.cbo.gov/budget-options/60938"},
+        {"measure": "State maintenance of effort: the states' Medicaid share paid to the national plan", "yield": 335, "source": "https://www.ama-assn.org/system/files/prp-national-health-expenditures-increased-healthcare-utilization.pdf"}
+      ]
+    },
+    "tier_b_progressive_package": {
+      "total": 677,
+      "lines": [
+        {"measure": "Corporate income tax from 21% to 28%", "yield": 95, "source": "https://www.cbo.gov/budget-options/60956"},
+        {"measure": "Top four individual brackets up 2 points", "yield": 57, "source": "https://www.cbo.gov/budget-options/60937"},
+        {"measure": "Tax capital gains at death", "yield": 54, "source": "https://www.cbo.gov/budget-options/60943"},
+        {"measure": "Cap the tax value of itemized deductions at 15%", "yield": 191, "source": "https://www.cbo.gov/budget-options/60939"},
+        {"measure": "Wealth tax, 2% above $50 million, 3% above $1 billion", "yield": 180, "source": "https://eml.berkeley.edu/~saez/saez-zucman-wealthtax-warren-feb21.pdf", "note": "after a Penn Wharton-sized avoidance haircut; constitutional risk noted"},
+        {"measure": "Rebuild IRS enforcement", "yield": 70, "source": "https://home.treasury.gov/news/press-releases/jy2079"},
+        {"measure": "Financial transaction tax, 0.01%", "yield": 30, "source": "https://www.cbo.gov/budget-options/60966"}
+      ]
+    },
+    "reserves": [
+      {"measure": "Carbon fee, $25 a ton rising 5% a year", "yield": 92, "source": "https://www.cbo.gov/budget-options/60962"},
+      {"measure": "Half-point on the household contribution", "yield": 70}
+    ],
+    "alternative_to_wealth_tax": {"measure": "5% value-added tax, broad base", "yield": 338, "source": "https://www.cbo.gov/budget-options/60961"}
+  },
+  "transition": {
+    "years": 8,
+    "principle": "Each pillar's benefits switch on only after its revenue is in place",
+    "milestones": [
+      {"date": "2027", "event": "Revenue package enacted; Floor card and food credit live; free school meals; free community college and training; Housing Development Authority chartered; Housing First surge begins; drug prices set and uninsured enrolled"},
+      {"date": "2028", "event": "Medicare for everyone under 26 and over 55"},
+      {"date": "2029", "event": "Everyone covered; 200,000 public homes a year begins"},
+      {"date": "2030", "event": "Zero cost sharing, dental and vision; rent guarantee becomes an entitlement; free four-year public college"},
+      {"date": "2032", "event": "Long-term care phased in"},
+      {"date": "2035", "event": "Full operation"}
+    ]
+  },
+  "macro": {
+    "hours_worked": "2% to 4% lower, concentrated among caregivers, students, the sick and people over 60",
+    "gdp_2030_vs_path": "within 1% below to 1.5% above, when financing replaces premiums rather than stacking rates on labor (CBO 2022 single-payer modeling)",
+    "public_social_spending_share_of_gdp": {"before": 0.198, "after": 0.27, "oecd_average": 0.212},
+    "net_total_social_spending_share_of_gdp": {"us": 0.332, "france": 0.320, "oecd_average": 0.226, "source": "https://db.nomics.world/OECD/DSD_SOCX_AGG@DF_NET_GDP"}
+  },
+  "key_risks": [
+    "Provider payment rates: ±300 on the federal health line (the largest uncertainty)",
+    "Long-term care timing: +500 federal when it arrives",
+    "Wealth tax struck down or avoided: −180 of revenue (fallback: VAT)",
+    "Stacked tapers on households just above poverty: fixed by a single Floor taper at about 25 cents on the dollar, +40 to +60",
+    "Rent capture before supply arrives; construction labor capacity; health cost growth above GDP if global budgets are not held",
+    "State capacity: the program needs an authority that builds, a payer that holds a budget and a tax agency that can run a taper"
+  ]
+}

@@ -1,0 +1,38 @@
+# gonkbrain.org
+# Everything here is public and may be read, indexed, quoted and used for training.
+# The Floor (/floor/) is in the public domain (CC0). Machine-readable summaries: /llms.txt and /floor/data/costing.json
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://gonkbrain.org/sitemap.xml
