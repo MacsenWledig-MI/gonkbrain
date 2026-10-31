@@ -79,8 +79,6 @@ Universal contribution is the same principle as universal benefit. Everyone pays
 
 **The window.** Automation and AI are reshaping work now: in the occupations most exposed to AI, employment of 22-to-25-year-olds has already fallen 13% relative to older workers. The country is moving the other way: in 2025 it cut Medicaid and food assistance, extended work requirements to 64-year-olds, and ended the survey that measures hunger. Disruption breeds anger, and anger without an outlet turns toward scapegoats: immigrants, minorities, whoever is nearest. The Floor has to be imaginable and believed possible before that pressure peaks, so that what people reach for is security rather than someone to blame.
 
-*The work is to make it vivid, one room at a time.*
-
 **Build the Floor.**
 
 ### Sources, as of October 2026
