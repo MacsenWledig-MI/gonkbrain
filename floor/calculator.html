@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"What the Floor costs you","url":"https://gonkbrain.org/floor/calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","isPartOf":{"@type":"WebSite","name":"The Floor","url":"https://gonkbrain.org/floor/"},"license":"https://creativecommons.org/publicdomain/zero/1.0/","description":"A household ledger for the Floor, a costed universal guarantee of housing, food, medical care and education. Computes the household contribution, the premiums and bills that end, the rent guarantee and food credit, and the range of the net change. All constants are sourced 2025 figures."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"What the Floor costs you","url":"https://gonkbrain.org/floor/calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","isPartOf":{"@type":"WebSite","name":"The Floor","url":"https://gonkbrain.org/floor/"},"license":"https://creativecommons.org/publicdomain/zero/1.0/","description":"A household ledger for the Floor, a costed universal guarantee of housing, food, medical care and education. Computes the household contribution, the VAT, the premiums and bills that end, the rent guarantee and food credit under a single taper, the employer-side change, and the range of the net result. All constants are sourced 2025 figures."}
 </script>
 <style>
 :root{--ink:#15171C;--quiet:#4A4F58;--rule:#15171C;--accent:#1E4ED8;--paper:#FFFFFF;--tint:#F3F5FA;--good:#1F6B4A;--bad:#B8461B}
@@ -21,7 +21,6 @@
 html,body{margin:0;background:var(--paper);color:var(--ink)}
 body{font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.5}
 a{color:var(--accent)}a:hover{color:var(--ink)}
-.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 header.top{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
 header.top span{color:var(--quiet)}
@@ -37,7 +36,9 @@ form{display:flex;flex-direction:column;gap:16px}
 label{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:17px;font-weight:600;line-height:1.2}
 label small{display:block;font-family:'Source Serif 4',Georgia,serif;font-weight:400;font-size:14px;color:var(--quiet);line-height:1.35;margin-top:2px}
 input[type=number],select{font:inherit;font-size:17px;padding:10px 12px;border:1.5px solid var(--ink);border-radius:0;background:#fff;color:var(--ink);min-height:44px;width:100%}
-input[type=number]:focus,select:focus{outline:3px solid var(--accent);outline-offset:1px}
+input[type=number]:focus,select:focus,input[type=checkbox]:focus{outline:3px solid var(--accent);outline-offset:1px}
+.check{display:flex;align-items:flex-start;gap:10px;font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.4;min-height:44px}
+.check input{width:22px;height:22px;margin-top:2px;flex:none}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:480px){.row2{grid-template-columns:1fr}}
 fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
@@ -65,7 +66,6 @@ footer{margin-top:44px;padding:16px 0 32px;border-top:2px solid var(--rule);disp
 footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)}
 .copybtn{font:inherit;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;border:0;padding:10px 16px;min-height:44px;cursor:pointer;margin-top:14px}
 .copybtn:hover{background:var(--accent)}
-.sr{position:absolute;left:-9999px}
 </style>
 </head>
 <body>
@@ -99,16 +99,19 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
 <option value="employer-single">Single plan through an employer</option>
 <option value="own">A plan I buy myself (marketplace or direct)</option>
 <option value="medicare">Medicare</option>
-<option value="medicaid-none">Medicaid, or no coverage</option>
+<option value="medicaid">Medicaid</option>
+<option value="none">No coverage</option>
 </select>
 </div>
+<label class="check"><input type="checkbox" id="wageEarner" checked> Someone in the household works for wages <small style="display:inline">(the 7.5% employer contribution then applies to that pay, whether or not the employer offers coverage)</small></label>
+<label class="check"><input type="checkbox" id="smallEmployer"> The employer is small, under about 30 employees, or you are self-employed <small style="display:inline">(every employer's first $2 million of payroll is exempt from the 7.5%, and the self-employed pay only the household contribution)</small></label>
 <div class="row2">
 <div class="field">
 <label for="premiumNow">Premiums you pay, per year <small>Optional. Leave blank to use the national average for your coverage.</small></label>
 <input type="number" id="premiumNow" name="premiumNow" inputmode="numeric" min="0" step="100" placeholder="average">
 </div>
 <div class="field">
-<label for="oopNow">Medical bills you pay, per year <small>Optional. Deductibles, copays, dental, glasses. Blank uses the national average per person.</small></label>
+<label for="oopNow">Medical bills you pay, per year <small>Optional. Deductibles, copays, dental, glasses. Blank uses an average for your coverage.</small></label>
 <input type="number" id="oopNow" name="oopNow" inputmode="numeric" min="0" step="100" placeholder="average">
 </div>
 </div>
@@ -133,14 +136,14 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
 <div class="result">
 <h3 id="verdict">Ahead by</h3>
 <div class="big" id="range">$0</div>
-<p class="sub" id="rangeNote">a year, from no change in your pay to the full employer saving reaching it.</p>
+<p class="sub" id="rangeNote"></p>
 <table aria-label="Line by line">
 <thead><tr><th>Line</th><th style="text-align:right">$ a year</th></tr></thead>
 <tbody id="lines"></tbody>
 </table>
 <button class="copybtn" type="button" id="copy">Copy this ledger</button>
 </div>
-<div class="callout" id="single-note" hidden><b>Note for single earners:</b> the breakeven for a single plan is lower than for a family, because a single premium is small and the contribution is not. Above roughly $100,000 of single income the Floor is a net cost, by design: it is paid for by the top, and the top for a one-person household starts lower than for four.</div>
+<div class="callout" id="breakeven-note"><b>Where the cash runs out.</b> In this model a family of four with an employer family plan comes out ahead to about $170,000 of income; a single person on an employer single plan to about $45,000 to $70,000, depending on how much of the employer&rsquo;s saving reaches their pay; a single wage earner with no coverage and no rent burden to about $30,000, because the 7.5% on their pay now buys coverage this ledger gives no dollar value to; renters and families keep gaining further up through the rent guarantee and the food credit. Above those lines the Floor costs more than it returns in cash. The lines sit lower for one-person households than for families because the contributions scale with income while the guarantees scale with people. Not everyone comes out ahead, and the design does not pretend otherwise.</div>
 </section>
 </div>
 
@@ -152,10 +155,10 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
 <details>
 <summary>What this leaves out</summary>
 <div class="assume">
-<p>The cap on itemized deductions and the taxation of capital gains at death are not modeled. They fall almost entirely on households above about $250,000 that itemize or hold appreciated assets, and would make the result for those households worse than shown. The wealth tax applies above $50 million of net worth and is not modeled.</p>
-<p>The employer line assumes your employer's payroll is above the first $2 million, where the 7.5% contribution applies. Workers at very small employers would see the full premium saving with no offset.</p>
-<p>The rent guarantee is modeled on HUD's national fair market rent for a modest home; your area's figure is higher or lower, and the guarantee covers households up to about 80% of area median income. Owners are not modeled; the Floor's owner backstop is a property-tax circuit breaker for severely burdened owners below median income.</p>
-<p>Prices: the package assumes supply programs hold rents and food prices roughly steady. If they don't, the real value of the guarantees falls. Nothing here is a forecast of your taxes; it is one design, applied to one household, with its sources open.</p>
+<p>The cap on itemized deductions, the taxation of capital gains at death and the wealth tax are not modeled. They fall almost entirely on households above about $250,000 that itemize or hold appreciated assets, or above $50 million of net worth, and would make the result for those households worse than shown.</p>
+<p>The VAT line is an estimate: 5% on the broad base (about 60% of consumption), with consumption assumed to be 95% of income under $50,000, falling to 50% above $400,000. The Floor's own card and rent guarantee offset most of the VAT for the poorest households; a one-time rise in the price level of about 3% is not shown.</p>
+<p>Existing taxes and the EITC phase-out still apply on top of the Floor's single taper, so effective marginal rates for families just above poverty remain in the 50s, down from the 70s without the taper. The rent guarantee is modeled on HUD's national fair market rent for a modest home; your area's figure is higher or lower. Owners are not modeled; the Floor's owner backstop is a property-tax circuit breaker for severely burdened owners below median income.</p>
+<p>Prices: the package assumes supply programs hold rents and food prices roughly steady and that the health system pays providers at CBO's lower rates. If rates end up near today's, the federal bill is about $630 billion higher and the package as designed does not cover it. Nothing here is a forecast of your taxes; it is one design, applied to one household, with its sources open.</p>
 </div>
 </details>
 
@@ -169,13 +172,15 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
   const L = window.FloorLedger;
   const C = L.CONST;
   const fmt = n => (n < 0 ? '−' : '') + '$' + Math.round(Math.abs(n)).toLocaleString('en-US');
-  const pct = n => (n * 100).toFixed(1) + '%';
+  const pct = n => (n * 100).toFixed(1).replace(/\.0$/, '') + '%';
   const S = {
     kff: 'https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf',
     cms: 'https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet',
     cbo22: 'https://www.cbo.gov/system/files/2022-02/57637-Single-Payer-Systems.pdf',
     cbo60937: 'https://www.cbo.gov/budget-options/60937',
     cbo60938: 'https://www.cbo.gov/budget-options/60938',
+    cbo60954: 'https://www.cbo.gov/budget-options/60954',
+    cbo60961: 'https://www.cbo.gov/budget-options/60961',
     oor: 'https://nlihc.org/resource/nlihc-releases-out-reach-2025-high-cost-housing',
     tfp: 'https://www.fna.usda.gov/sites/default/files/resource-files/CostofFoodSep2026Thrifty.pdf',
     pkg: './package.html',
@@ -184,38 +189,43 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
   function read() {
     const v = id => { const x = $(id).value; return x === '' ? null : x; };
     return { income: $('income').value, filing: $('filing').value, people: $('people').value, coverage: $('coverage').value,
+             wageEarner: $('wageEarner').checked, smallEmployer: $('smallEmployer').checked,
              premiumNow: v('premiumNow'), oopNow: v('oopNow'), rent: v('rent'), tuition: v('tuition') };
   }
   let last = null;
   function render() {
     const r = L.ledger(read()); last = r;
-    const ahead = r.high > 0 && r.low >= 0, behind = r.high <= 0, mixed = !ahead && !behind;
+    const ahead = r.low >= 0 && r.high > 0, behind = r.high <= 0;
     $('verdict').textContent = ahead ? 'Ahead by' : behind ? 'Behind by' : 'Between';
     const big = $('range');
     big.className = 'big ' + (ahead ? 'good' : behind ? 'bad' : '');
-    if (ahead) big.textContent = fmt(r.low) + ' to ' + fmt(r.high);
-    else if (behind) big.textContent = fmt(-r.high) + ' to ' + fmt(-r.low);
+    const same = Math.abs(r.high - r.low) < 1;
+    if (ahead) big.textContent = same ? fmt(r.low) : fmt(r.low) + ' to ' + fmt(r.high);
+    else if (behind) big.textContent = same ? fmt(-r.low) : fmt(-r.high) + ' to ' + fmt(-r.low);
     else big.textContent = fmt(r.low) + ' and ' + fmt(r.high);
-    const emp = r.employerPremium > 0;
-    $('rangeNote').textContent = emp
-      ? (r.netEmployerChange >= 0
-          ? 'a year. The low end assumes none of your employer’s saving reaches your pay; the high end assumes all of it does, after tax.'
-          : 'a year. Your employer would pay more than it saves; the range runs from none of that reaching your pay to all of it.')
-      : 'a year. No employer plan, so no employer saving to pass through.';
+    const emp = r.employerPremium > 0 || r.employerContribution > 0;
+    $('rangeNote').textContent = !emp
+      ? 'a year. No wages and no employer plan, so nothing passes through an employer.'
+      : (r.netEmployerChange >= 0
+          ? 'a year. The low end assumes none of your employer’s net saving reaches your pay; the high end assumes all of it does, after tax.'
+          : 'a year. Your employer would pay more in contribution than it saves in premiums; the range runs from none of that coming out of your pay to all of it.');
     const rows = [];
     const add = (label, n, note) => rows.push({label, n, note});
-    add('Floor contribution: 4% of income above ' + fmt(r.threshold), -r.contribution);
+    add('Floor contribution: ' + pct(C.contributionRate) + ' of income above ' + fmt(r.threshold), -r.contribution);
+    if (r.vat > 0) add('VAT, 5% on the broad base of what you spend', -r.vat, 'about ' + pct(C.vatBaseShare) + ' of consumption is in the base; consumption assumed at ' + fmt(r.consumption));
+    if (r.surtax > 0) add('Surtax: 2 points on income above ' + fmt(r.surtaxStart), -r.surtax);
     if (r.bracketExtra > 0) add('Top four federal brackets up 2 points, on taxable income above ' + fmt(r.bracketStart), -r.bracketExtra);
     add('Premiums that end', r.premiumNow, r.premiumLabel);
     add('Medical bills that end', r.oop, r.oopLabel);
     if (r.input.rent !== null && r.input.rent > 0) {
-      if (r.rentEligible) add('Rent guarantee: rent above 30% of income on a modest home', r.rentSubsidy, 'modest rent capped at ' + fmt(r.rentCapped) + ' a month (HUD fair market rent)');
-      else add('Rent guarantee', 0, 'your income is above the guarantee’s limit of about ' + fmt(r.input.people > 1 ? C.rentEligibleFamily : C.rentEligibleSingle) + ' (80% of area median)');
+      if (r.rentSubsidy > 0) add('Rent guarantee: rent above 30% of income on a modest home', r.rentSubsidy, 'modest rent capped at ' + fmt(r.rentCapped) + ' a month (HUD fair market rent)' + (r.rentShareOfFull < 1 ? '; you are in the 60–80% of area median income taper, at ' + Math.round(r.rentShareOfFull * 100) + '% of the full guarantee' : ''));
+      else add('Rent guarantee', 0, r.rentShareOfFull === 0 ? 'your income is above the guarantee’s limit of about ' + fmt(r.input.people > 1 ? C.rentZeroFamily : C.rentZeroSingle) + ' (80% of area median)' : 'your rent is already under 30% of your income');
     }
     if (r.foodCredit > 0) add('Food credit on the Floor card', r.foodCredit, 'full at the poverty line (' + fmt(r.poverty) + ' for your household), tapering to zero at 250% of it; you are at ' + Math.round(r.ratio * 100) + '%');
+    if (r.singleTaperAdd > 0) add('Single taper: food and rent together may not fall faster than 25 cents per dollar above the poverty line', r.singleTaperAdd, 'your bundle at the poverty line would be ' + fmt(r.bundleAtPoverty) + '; this tops it back up to that minus 25% of your income above ' + fmt(r.poverty));
     if (r.tuition > 0) add('Tuition and fees that end', r.tuition);
-    if (emp) add('Employer premium that becomes wages, after tax, if it all reaches you', r.passThroughAfterTax,
-      'employer premium ' + fmt(r.employerPremium) + ' less its 7.5% contribution ' + fmt(r.employerContribution) + ' = ' + fmt(r.netEmployerChange) + ', taxed at your marginal rate of about ' + pct(r.marginal));
+    if (emp) add(r.netEmployerChange >= 0 ? 'Employer saving that becomes wages, after tax, if it all reaches you' : 'Employer’s extra cost that comes out of wages, after tax, if it all reaches you', r.passThroughAfterTax,
+      'employer premium ' + fmt(r.employerPremium) + ' less its 7.5% contribution on your pay ' + fmt(r.employerContribution) + ' = ' + fmt(r.netEmployerChange) + ', at your marginal rate of about ' + pct(r.marginal));
     const tb = $('lines'); tb.innerHTML = '';
     for (const row of rows) {
       const tr = document.createElement('tr');
@@ -224,18 +234,19 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
       if (row.note) { const t2 = document.createElement('tr'); t2.innerHTML = '<td class="note" colspan="2">' + row.note + '</td>'; tb.appendChild(t2); }
     }
     const tot = document.createElement('tr'); tot.className = 'total';
-    tot.innerHTML = '<td>Net, before any employer pass-through</td><td class="n">' + (r.noIncidence > 0 ? '+' : '') + fmt(r.noIncidence) + '</td>';
+    tot.innerHTML = '<td>Net, before anything passes through your employer</td><td class="n">' + (r.noIncidence > 0 ? '+' : '') + fmt(r.noIncidence) + '</td>';
     tb.appendChild(tot);
-    $('single-note').hidden = !(r.input.coverage === 'employer-single' && r.input.income >= 90000);
 
     $('assume').innerHTML =
-      '<p><b>Your contribution.</b> ' + pct(C.contributionRate) + ' of household income above ' + fmt(r.threshold) + ' (' + fmt(C.thresholdSingle) + ' single, ' + fmt(C.thresholdJoint) + ' joint). A design choice in the <a href="' + S.pkg + '">economic package</a>, scaled from <a href="' + S.cbo60938 + '">CBO’s surtax option</a>; it replaces premiums and bills.</p>' +
+      '<p><b>Your contribution.</b> ' + pct(C.contributionRate) + ' of household income above ' + fmt(r.threshold) + ' (' + fmt(C.thresholdSingle) + ' single, ' + fmt(C.thresholdJoint) + ' joint). A design choice in the <a href="' + S.pkg + '">economic package</a>, priced from <a href="' + S.cbo60938 + '">CBO’s surtax option</a>; it replaces premiums and bills. The 2-point surtax above ' + fmt(C.surtaxStartSingle) + ' / ' + fmt(C.surtaxStartJoint) + ' is CBO’s second variant of the same option.</p>' +
+      '<p><b>VAT.</b> ' + pct(C.vatRate) + ' on a broad base covering about ' + pct(C.vatBaseShare) + ' of consumption (<a href="' + S.cbo60961 + '">CBO option</a>), the package’s closing measure. Consumption is assumed to be 95% of income under $50,000, 80% to $150,000, 65% to $400,000, 50% above.</p>' +
       '<p><b>Brackets.</b> Top four federal brackets up two points, from taxable income of ' + fmt(C.bracketStartSingle) + ' single / ' + fmt(C.bracketStartJoint) + ' joint (2025), after a standard deduction of ' + fmt(C.standardDeductionSingle) + ' / ' + fmt(C.standardDeductionJoint) + '. <a href="' + S.cbo60937 + '">CBO option</a>. Your taxable income here: ' + fmt(r.taxable) + '.</p>' +
       '<p><b>Premiums.</b> Worker share of an employer plan, 2025: ' + fmt(C.workerPremiumSingle) + ' single, ' + fmt(C.workerPremiumFamily) + ' family; employer share ' + fmt(C.employerPremiumSingle) + ' / ' + fmt(C.employerPremiumFamily) + '. <a href="' + S.kff + '">KFF Employer Health Benefits Survey 2025</a>. Medicare Part B ' + fmt(C.medicarePartB) + ' a year.</p>' +
-      '<p><b>Bills.</b> Out-of-pocket spending averaged ' + fmt(C.oopPerPerson) + ' per resident in 2024 (<a href="' + S.cms + '">CMS</a>, $556.6 billion over 341.8 million people). An average: higher for older people and the uninsured, lower for healthy insured families. Enter your own.</p>' +
-      '<p><b>Employer pass-through.</b> <a href="' + S.cbo22 + '">CBO (2022)</a> models employer health costs, about 7% of compensation, as passing to workers as taxable wages when a single payer ends them. The employer also pays the Floor’s ' + pct(C.employerRate) + ' of payroll. The net change is taxed at your estimated marginal rate: federal bracket plus ' + pct(C.ficaEmployee) + ' FICA (' + pct(0.0145) + ' above the ' + fmt(C.ssWageBase) + ' wage base) plus ' + pct(C.stateTaxRate) + ' state.</p>' +
-      '<p><b>Rent.</b> No household pays more than ' + pct(C.rentShare) + ' of income for a modest home: HUD’s 2025 fair market rent, ' + fmt(C.modestRentSingle) + ' a month for one bedroom, ' + fmt(C.modestRentFamily) + ' for two (<a href="' + S.oor + '">NLIHC, Out of Reach 2025</a>). Covers households up to about 80% of area median income: ' + fmt(C.rentEligibleSingle) + ' for one person, ' + fmt(C.rentEligibleFamily) + ' for a family, national figures.</p>' +
+      '<p><b>Bills.</b> Out-of-pocket spending averaged $1,630 per resident in 2024 (<a href="' + S.cms + '">CMS</a>, $556.6 billion over 341.8 million people). About ' + fmt(C.oopPerPerson) + ' of that is for care the Floor covers and ends; the rest is over-the-counter items, nursing-home care (covered from 2032) and other non-covered spending, which continue. CBO’s lower-cost-sharing single-payer option ends about 42% of out-of-pocket spending; the Floor’s zero drug cost sharing adds a little. ' + fmt(C.oopPerPersonMedicaid) + ' assumed for Medicaid enrollees. Enter your own.</p>' +
+      '<p><b>The employer side.</b> The Floor’s ' + pct(C.employerRate) + ' of payroll applies to every employer above its first $2 million of payroll, whether or not it offers coverage (<a href="' + S.cbo60954 + '">priced from CBO’s payroll-tax option</a>). <a href="' + S.cbo22 + '">CBO (2022)</a> models employer health costs as passing to workers as taxable wages when a single payer ends them; by the same logic a new levy comes out of wages. The net change is taxed at your estimated marginal rate: federal bracket plus ' + pct(C.ficaEmployee) + ' FICA (' + pct(0.0145) + ' above the ' + fmt(C.ssWageBase) + ' wage base) plus ' + pct(C.stateTaxRate) + ' state.</p>' +
+      '<p><b>Rent.</b> No household pays more than ' + pct(C.rentShare) + ' of income for a modest home: HUD’s 2025 fair market rent, ' + fmt(C.modestRentSingle) + ' a month for one bedroom, ' + fmt(C.modestRentFamily) + ' for two (<a href="' + S.oor + '">NLIHC, Out of Reach 2025</a>). Full to about 60% of area median income (' + fmt(C.rentFullSingle) + ' for one person, ' + fmt(C.rentFullFamily) + ' for a family, national figures), tapering to zero at 80% (' + fmt(C.rentZeroSingle) + ' / ' + fmt(C.rentZeroFamily) + ').</p>' +
       '<p><b>Food.</b> The Floor card carries USDA’s <a href="' + S.tfp + '">Thrifty Food Plan</a>, about ' + fmt(C.foodPerPersonMonth) + ' a person a month, full at or below the poverty line (' + fmt(C.povertyBase) + ' plus ' + fmt(C.povertyPerExtra) + ' per additional person, 2025 guideline) and tapering to zero at ' + (C.foodTaperEnd * 100) + '% of it.</p>' +
+      '<p><b>The single taper.</b> Food and rent together may not fall faster than ' + pct(C.singleTaperRate) + ' per dollar of income above the poverty line; where the separate tapers would take more, the Floor tops the bundle back up. Income and payroll taxes and the EITC phase-out still apply on top.</p>' +
       '<p><b>Tuition.</b> Public colleges collected an average of $7,459 per full-time student in fiscal 2025 (<a href="' + S.shef + '">SHEEO</a>); the Floor charges residents nothing. Enter what you pay.</p>' +
       '<p>Figures are in 2025 dollars at the Floor’s full operation. The whole design, its costs and its revenue are in <a href="' + S.pkg + '">the economic package</a>; the constants live in <a href="./ledger.js">ledger.js</a>, which anyone can change.</p>';
   }
@@ -245,18 +256,20 @@ footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)
     const lines = [
       'What the Floor costs you · gonkbrain.org/floor/calculator.html',
       'Household income ' + fmt(r.input.income) + ', ' + r.input.people + ' people, ' + (r.input.filing === 'joint' ? 'joint' : 'single') + ', coverage: ' + r.input.coverage,
-      'Contribution: ' + fmt(-r.contribution) + (r.bracketExtra > 0 ? '; brackets: ' + fmt(-r.bracketExtra) : ''),
+      'Contribution: ' + fmt(-r.contribution) + '; VAT: ' + fmt(-r.vat) + (r.surtax > 0 ? '; surtax: ' + fmt(-r.surtax) : '') + (r.bracketExtra > 0 ? '; brackets: ' + fmt(-r.bracketExtra) : ''),
       'Premiums that end: +' + fmt(r.premiumNow) + '; bills that end: +' + fmt(r.oop),
       r.rentSubsidy > 0 ? 'Rent guarantee: +' + fmt(r.rentSubsidy) : null,
       r.foodCredit > 0 ? 'Food credit: +' + fmt(r.foodCredit) : null,
+      r.singleTaperAdd > 0 ? 'Single taper top-up: +' + fmt(r.singleTaperAdd) : null,
       r.tuition > 0 ? 'Tuition that ends: +' + fmt(r.tuition) : null,
-      r.employerPremium > 0 ? 'Employer change reaching pay, after tax: ' + fmt(r.passThroughAfterTax) : null,
+      (r.employerPremium > 0 || r.employerContribution > 0) ? 'Employer net change reaching pay, after tax: ' + fmt(r.passThroughAfterTax) : null,
       'Net: ' + fmt(r.low) + ' to ' + fmt(r.high) + ' a year'
     ].filter(Boolean).join('\n');
     if (navigator.clipboard) navigator.clipboard.writeText(lines).then(() => { $('copy').textContent = 'Copied'; setTimeout(() => $('copy').textContent = 'Copy this ledger', 1500); });
   }
-  document.getElementById('f').addEventListener('input', render);
-  document.getElementById('f').addEventListener('change', render);
+  const form = document.getElementById('f');
+  form.addEventListener('input', render);
+  form.addEventListener('change', render);
   $('copy').addEventListener('click', copy);
   render();
 })();

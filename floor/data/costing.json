@@ -1,62 +1,168 @@
 {
   "name": "The Floor: costing and revenue package",
-  "version": "2026-10-28",
+  "version": "2026-11-01",
+  "supersedes": "2026-10-28",
   "license": "CC0-1.0",
   "url": "https://gonkbrain.org/floor/",
-  "full_text": "https://gonkbrain.org/floor/economic-package.md",
-  "units": "USD billions per year, 2025 dollars, at full operation (year 8 of the transition) unless stated",
-  "summary": {
-    "net_new_public_spending": 2220,
-    "net_new_public_spending_range": [1730, 2430],
-    "share_of_2025_gdp": 0.072,
-    "private_and_state_spending_replaced": 2645,
-    "net_new_claim_on_real_resources": -40,
-    "net_new_claim_range": [-360, 390],
+  "full_text": "https://gonkbrain.org/floor/package.html",
+  "conventions": {
+    "units": "USD billions per year",
+    "costs": "CBO's 2030 single-payer estimates (Working Paper 2020-08) are used at 2025 scale: CBO's projected 2030 GDP (about $30.8 trillion) is nearly identical to actual 2025 GDP ($30.86 trillion). Other cost lines are 2025 dollars.",
+    "revenue": "first-year (2026) levels: CBO's own 2026 figure where its option tables give one; otherwise CBO ten-year averages rebased by 0.87, CBO's ratio of its 2026 to ten-year-average yield for a 1-point AGI surtax ($124.4B vs $144B). Employer-side levies are counted net of the income and payroll tax they displace by lowering taxable wages (about a third).",
     "gdp_2025_billions": 30861,
-    "gdp_source": "https://fred.stlouisfed.org/series/GDPA"
+    "gdp_source": "https://fred.stlouisfed.org/series/GDPA",
+    "full_operation": "year eight (2035), which includes long-term care from 2032; the core bill is the four guarantees before long-term care enters"
+  },
+  "summary": {
+    "core_bill_lower_provider_rates": 2288,
+    "core_bill_higher_provider_rates": 2915,
+    "core_bill_range": [
+      2165,
+      3062
+    ],
+    "core_bill_share_of_gdp": [
+      0.074,
+      0.094
+    ],
+    "long_term_care_from_2032": 599,
+    "full_operation_bill": [
+      2887,
+      3514
+    ],
+    "full_operation_share_of_gdp": [
+      0.094,
+      0.114
+    ],
+    "revenue_as_designed_including_vat": 2467,
+    "revenue_without_vat": 2173,
+    "revenue_without_wealth_tax": 2287,
+    "margin_at_lower_rates": 179,
+    "shortfall_at_higher_rates": 448,
+    "private_and_state_spending_replaced_core": 1913,
+    "private_and_state_spending_replaced_full_operation": 2127,
+    "change_in_national_health_spending_core": [
+      -645,
+      -37
+    ],
+    "change_in_national_health_spending_full_operation": [
+      -313,
+      295
+    ],
+    "net_new_claim_on_real_resources_core": [
+      -142,
+      466
+    ],
+    "net_new_claim_on_real_resources_full_operation": [
+      190,
+      798
+    ],
+    "note": "The package closes at CBO's lower provider payment rates with a 5% VAT as a core measure and a $179B margin; if the wealth tax falls, the margin is gone and it still balances. At payment rates near today's average it does not close; the shortfall is about $450B and is stated, not hidden."
   },
   "pillars": [
     {
       "name": "Medical care",
-      "design": "One public payer covering every resident, no premiums, deductibles or copays; provider rates between Medicare and today's private average; global hospital budgets; negotiated drug prices; dental, vision, hearing; long-term care phased in from year six.",
-      "net_new_public_spending": 1800,
-      "range": [1400, 1900],
-      "long_term_care_additional": 500,
-      "private_and_state_spending_replaced": 2385,
-      "change_in_total_national_health_spending": -200,
-      "change_range": [-520, 230],
-      "basis": "CBO Working Paper 2020-08 options 3 and 4, scaled to CMS NHE 2024",
+      "design": "CBO's Option 3 with one addition: one public payer covering every resident; no premiums, deductibles or copays, including on retail drugs (CBO's option keeps a 3% drug cost share; the Floor removes it, about $15B); dental, vision and hearing included (already in CBO's options); provider payment at CBO's lower rates (hospitals 123% of Medicare, 87% of today's all-payer average and 50% of private rates; physicians 111% of Medicare, 93% of the average); global hospital budgets; negotiated drug prices; long-term care from 2032 under its own contribution.",
+      "federal_cost_lower_rates": 1785,
+      "federal_cost_higher_rates": 2412,
+      "change_in_national_health_spending": [
+        -645,
+        -37
+      ],
+      "basis": "CBO Working Paper 2020-08 Option 3 (lower rates, lower cost sharing: federal +1,769, NHE -650, OOP -306) and Option 4 (higher rates: +2,397, -42, -327), plus about $15B for zero drug cost sharing. The federal figure is net of the employer-coverage tax exclusion, which CBO counts as a federal subsidy that ends when premiums become taxable wages; the revenue lines below are therefore counted net of the same effect.",
+      "higher_rate_case_adds": 627,
+      "out_of_pocket": {
+        "today_2024": 557,
+        "ends_under_option_3_about": 300,
+        "continues": "over-the-counter and other non-durable items, nursing-home private pay (ends 2032), non-covered care, providers who opt out"
+      },
+      "long_term_care_increment": {
+        "federal": 599,
+        "national_spending": 332,
+        "out_of_pocket_ends": 139,
+        "basis": "CBO Option 5 less Option 4",
+        "funding": "dedicated long-term care contribution of about 4% of earnings, paid like the Medicare tax (about $560B on 2025 earnings), plus the states' long-term care share of Medicaid (about $75B): about $635B against $599B"
+      },
+      "replaced": {
+        "employer_premiums": 753,
+        "household_premiums": 600,
+        "household_out_of_pocket_that_ends": 300,
+        "state_medicaid_share_before_2032": 260,
+        "state_medicaid_share_from_2032": 335,
+        "source": "CMS NHE 2024 sponsor detail via AMA (employer premiums $753B; household premiums and out-of-pocket $1,157B, of which about $900B ends in the core phase); the 18% 'private business' sponsor share also contains Medicare payroll tax and workers' compensation, which continue"
+      },
+      "transition_costs_not_in_steady_state": {
+        "just_transition_fund_total": 60,
+        "hospital_stabilization_per_year_for_five_years": 20
+      },
+      "precedents": "Vermont abandoned Green Mountain Care in December 2014 when its financing (an 11.5% payroll tax and an income tax up to 9.5%) was published; Colorado's Amendment 69 (a 10% payroll tax) lost 79-21 in 2016.",
       "sources": [
         "https://www.cbo.gov/publication/56811",
+        "https://www.cbo.gov/system/files/2022-02/57637-Single-Payer-Systems.pdf",
         "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet",
+        "https://www.ama-assn.org/system/files/prp-national-health-expenditures-increased-healthcare-utilization.pdf",
         "https://www.acpjournals.org/doi/10.7326/M19-2818",
         "https://www.oecd.org/en/publications/2025/11/health-at-a-glance-2025_a894f72e/full-report/indicator-overview-country-dashboards-and-major-trends_368ac397.html"
       ]
     },
     {
       "name": "Housing",
-      "design": "Housing First for everyone homeless; a rent guarantee so no household pays more than 30% of income for a modest home, as an entitlement; a federal Housing Development Authority building 200,000 permanently affordable homes a year, bond-financed; an owner backstop.",
-      "net_new_public_spending": 180,
-      "range": [140, 230],
-      "lines": {"housing_first": 10, "rent_guarantee": 130, "building_program_capital_grant_and_repair": 35, "owner_backstop": 5},
-      "construction_bond_financed_per_year": [50, 70],
-      "comparison_homeowner_tax_expenditures_per_year": 300,
+      "design": "Housing First for everyone homeless; a rent guarantee so no household pays more than 30% of income for a modest home (HUD's 40th-percentile fair market rent as the payment standard), full to 60% of area median income and tapering to zero at 80%; a federal Housing Development Authority building 200,000 permanently affordable mixed-income homes a year, bond-financed, with the Faircloth cap repealed; repair of existing public housing; an owner backstop.",
+      "net_new_public_spending": 200,
+      "range": [
+        150,
+        250
+      ],
+      "lines": {
+        "housing_first": 10,
+        "rent_guarantee": 130,
+        "building_program_capital_grant": 30,
+        "public_housing_repair": 10,
+        "bond_service_appropriation_by_year_10": 15,
+        "owner_backstop": 5
+      },
+      "construction_bond_financed_per_year": [
+        50,
+        70
+      ],
+      "cumulative_bonds_after_decade": 600,
+      "comparison_homeowner_tax_expenditures_per_year": {
+        "jct_items_only": 145,
+        "including_treasury_imputed_rent": 300
+      },
+      "capture_risk": "voucher generosity raises rents where vacancy is low (Collinson and Ganong 2018; Susin 2002; Eriksen and Ross 2015); the payment standard is set at the 40th percentile, not actual rent, and the entitlement starts in year four after the building program has delivered",
       "sources": [
         "https://www.hud.gov/news/hud-no-26-037",
+        "https://nlihc.org/resource/hud-2025-annual-homelessness-assessment-report-finds-first-reduction-overall-homelessness",
         "https://www.jchs.harvard.edu/sites/default/files/reports/files/Harvard_JCHS_The_State_of_the_Nations_Housing_2026.pdf",
         "https://www.urban.org/research/publication/how-much-could-full-funding-and-use-housing-choice-vouchers-reduce-poverty",
         "https://www.census.gov/housing/hvs/files/qtr326/Q326press.pdf",
+        "https://www.everycrsreport.com/reports/IN12628.html",
         "https://endhomelessness.org/resources/research-and-analysis/how-much-would-it-cost-to-provide-housing-first-to-all-households-staying-in-homeless-shelters/",
-        "https://stacks.cdc.gov/view/cdc/114852"
+        "https://stacks.cdc.gov/view/cdc/114852",
+        "https://www.aeaweb.org/articles?id=10.1257/pol.20150176"
       ]
     },
     {
       "name": "Food",
-      "design": "A Floor card every resident holds, loaded with USDA's Thrifty Food Plan, full at or below the poverty line and tapering to zero at 250% of it, no application or conditions; universal free school meals; a food-recovery program.",
-      "net_new_public_spending": 150,
-      "range": [120, 190],
-      "lines": {"food_credit_gross": 232, "less_snap_fy2025": -103, "universal_school_meals": 13, "prepared_meals": 2, "food_recovery": 4},
-      "taper_sensitivity": {"end_at_200pct_fpl": 120, "end_at_300pct_fpl": 190},
+      "design": "A Floor card every resident holds, loaded with USDA's Thrifty Food Plan; full at or below the poverty line and tapering to zero at 250% of it; issued by residency, with the full credit as the default for anyone with no tax return on file and the taper applied only when a return shows income; universal free school meals; a food-recovery program.",
+      "net_new_public_spending": 140,
+      "range": [
+        110,
+        180
+      ],
+      "lines": {
+        "food_credit_gross": 224,
+        "less_snap_fy2025": -103,
+        "universal_school_meals": 13,
+        "prepared_meals": 2,
+        "food_recovery": 4,
+        "food_security_survey": 0.05
+      },
+      "credit_arithmetic": "341.8M residents; 12.1% at or below poverty at full credit, 15.2% at 100-199% averaging 60%, about 7.4% at 200-249% averaging 17%; $256 a person a month; 95% take-up assumed",
+      "taper_sensitivity": {
+        "end_at_200pct_fpl": 110,
+        "end_at_300pct_fpl": 180
+      },
       "sources": [
         "https://www.fna.usda.gov/sites/default/files/resource-files/snap-annualsummary-10.pdf",
         "https://www.fna.usda.gov/sites/default/files/resource-files/CostofFoodSep2026Thrifty.pdf",
@@ -67,69 +173,239 @@
     },
     {
       "name": "Education",
-      "design": "Tuition- and fee-free public two- and four-year college for residents, first dollar, no income cap; states keep appropriations; Pell becomes a living-cost grant; free short credentials and training; an apprenticeship fund tripling active apprentices; expanded WIOA.",
-      "net_new_public_spending": 90,
-      "range": [70, 110],
-      "lines": {"tuition_replacement": 78, "capacity_grants": 5, "training_and_apprenticeships": 7},
-      "not_counted_extension_early_childhood": [100, 130],
+      "design": "Tuition- and fee-free public two- and four-year college for residents, first dollar, no income cap; nonresident and graduate tuition unchanged; states keep appropriations as a condition of the money; Pell becomes a living-cost grant; free short credentials and training; an apprenticeship fund; expanded WIOA.",
+      "net_new_public_spending": 73,
+      "range": [
+        60,
+        100
+      ],
+      "lines": {
+        "resident_undergraduate_tuition_replacement": 54,
+        "capacity_grants": 12,
+        "training_and_apprenticeships": 7
+      },
+      "arithmetic": "resident undergraduates are taken as about 60% of SHEEO's $80.7B net tuition and fee revenue ($48B), plus a 12% enrollment response; the share is an assumption and the main uncertainty (Georgetown CEW's 2016 first-dollar design, covering more students, scales to about $77B today)",
+      "not_counted_extension_early_childhood": [
+        100,
+        130
+      ],
       "sources": [
         "https://shef.sheeo.org/wp-content/uploads/2026/04/SHEF_FY25_Report.pdf",
         "https://cew.georgetown.edu/resource/the-dollars-and-sense-of-free-college",
         "https://www.apprenticeship.gov/sites/default/files/DOL_IndustryFactsheet_AboutUs_20260825.pdf"
       ]
+    },
+    {
+      "name": "Single taper",
+      "design": "One combined phase-out for the food credit and the rent guarantee, administered on the tax return, capped at 25 cents per dollar of income above the poverty line; existing income and payroll taxes and the EITC phase-out still apply on top.",
+      "net_new_public_spending": 90,
+      "note": "Inside the core bill. A model-based estimate from the calculator's own arithmetic (about $83B), rounded up. Reduces combined effective marginal rates for families just above poverty from the 70s to the 50s; it does not eliminate them.",
+      "range": [
+        60,
+        120
+      ]
     }
   ],
   "revenue": {
     "tier_a_contributions_replacing_premiums": {
-      "total": 1520,
+      "total": 1382,
       "lines": [
-        {"measure": "Employer health contribution, 7.5% of payroll above an employer's first $2 million", "yield": 610, "source": "https://www.sanders.senate.gov/download/options-to-finance-medicare-for-all", "note": "scaled to 2025 wages, https://fred.stlouisfed.org/data/A4102C1A027NBEA"},
-        {"measure": "Household health contribution, 4% of income above $20,000 single / $40,000 joint", "yield": 575, "source": "https://www.cbo.gov/budget-options/60938"},
-        {"measure": "State maintenance of effort: the states' Medicaid share paid to the national plan", "yield": 335, "source": "https://www.ama-assn.org/system/files/prp-national-health-expenditures-increased-healthcare-utilization.pdf"}
+        {
+          "measure": "Employer health contribution, 7.5% of payroll above each employer's first $2 million; the self-employed pay only the household contribution",
+          "yield_net": 500,
+          "yield_gross": 760,
+          "basis": "7.5% of the roughly 78% of 2025 wages and salaries ($13.0T) at employers above the exemption, about $760B gross, less roughly a third for the income and payroll tax the levy displaces by lowering taxable wages (CBO already counts the tax on premiums-turned-wages inside the health line). CBO's employee-side payroll-tax option ($118.2B per point in 2026) gives a similar figure on the same base.",
+          "source": "https://www.cbo.gov/budget-options/60954"
+        },
+        {
+          "measure": "Household health contribution, 5% of income above $20,000 single / $40,000 joint",
+          "yield_net": 622,
+          "basis": "CBO AGI surtax option, alternative 1: $124.4B per point in 2026",
+          "source": "https://www.cbo.gov/budget-options/60938"
+        },
+        {
+          "measure": "State maintenance of effort: the states' Medicaid share paid to the national plan ($260B before long-term care transfers in 2032; $335B after)",
+          "yield_net": 260,
+          "note": "cannot be compelled after NFIB v. Sebelius (2012); negotiated as the price of federal assumption of Medicaid",
+          "source": "https://www.ama-assn.org/system/files/prp-national-health-expenditures-increased-healthcare-utilization.pdf"
+        }
       ]
     },
     "tier_b_progressive_package": {
-      "total": 677,
+      "total": 622,
       "lines": [
-        {"measure": "Corporate income tax from 21% to 28%", "yield": 95, "source": "https://www.cbo.gov/budget-options/60956"},
-        {"measure": "Top four individual brackets up 2 points", "yield": 57, "source": "https://www.cbo.gov/budget-options/60937"},
-        {"measure": "Tax capital gains at death", "yield": 54, "source": "https://www.cbo.gov/budget-options/60943"},
-        {"measure": "Cap the tax value of itemized deductions at 15%", "yield": 191, "source": "https://www.cbo.gov/budget-options/60939"},
-        {"measure": "Wealth tax, 2% above $50 million, 3% above $1 billion", "yield": 180, "source": "https://eml.berkeley.edu/~saez/saez-zucman-wealthtax-warren-feb21.pdf", "note": "after a Penn Wharton-sized avoidance haircut; constitutional risk noted"},
-        {"measure": "Rebuild IRS enforcement", "yield": 70, "source": "https://home.treasury.gov/news/press-releases/jy2079"},
-        {"measure": "Financial transaction tax, 0.01%", "yield": 30, "source": "https://www.cbo.gov/budget-options/60966"}
+        {
+          "measure": "Cap the tax value of itemized deductions at 15%",
+          "yield_net": 166,
+          "source": "https://www.cbo.gov/budget-options/60939"
+        },
+        {
+          "measure": "Wealth tax, 2% above $50 million, 3% above $1 billion",
+          "yield_net": 180,
+          "source": "https://eml.berkeley.edu/~saez/saez-zucman-wealthtax-warren-feb21.pdf",
+          "note": "Saez-Zucman $3.0T over ten years already assumes 15% avoidance; counted below their estimate; constitutional question open after Moore (2024)"
+        },
+        {
+          "measure": "Corporate income tax from 21% to 28%",
+          "yield_net": 83,
+          "source": "https://www.cbo.gov/budget-options/60956"
+        },
+        {
+          "measure": "Rebuild IRS enforcement",
+          "yield_net": 70,
+          "note": "requires re-appropriation of rescinded funding first",
+          "source": "https://home.treasury.gov/news/press-releases/jy2079"
+        },
+        {
+          "measure": "Top four individual brackets up 2 points",
+          "yield_net": 50,
+          "source": "https://www.cbo.gov/budget-options/60937"
+        },
+        {
+          "measure": "Tax capital gains at death",
+          "yield_net": 47,
+          "source": "https://www.cbo.gov/budget-options/60943"
+        },
+        {
+          "measure": "Financial transaction tax, 0.01%",
+          "yield_net": 26,
+          "source": "https://www.cbo.gov/budget-options/60966"
+        }
       ]
     },
-    "reserves": [
-      {"measure": "Carbon fee, $25 a ton rising 5% a year", "yield": 92, "source": "https://www.cbo.gov/budget-options/60962"},
-      {"measure": "Half-point on the household contribution", "yield": 70}
-    ],
-    "alternative_to_wealth_tax": {"measure": "5% value-added tax, broad base", "yield": 338, "source": "https://www.cbo.gov/budget-options/60961"}
+    "tier_c_closing_measures": {
+      "total": 463,
+      "lines": [
+        {
+          "measure": "5% value-added tax, broad base",
+          "yield_net": 294,
+          "source": "https://www.cbo.gov/budget-options/60961",
+          "alternative": "a household contribution of 7% instead of 5% raises about the same ($249B more)"
+        },
+        {
+          "measure": "Carbon fee, $25 a ton rising 5% a year",
+          "yield_net": 80,
+          "source": "https://www.cbo.gov/budget-options/60962"
+        },
+        {
+          "measure": "2-point surtax on income above $100,000 single / $200,000 joint",
+          "yield_net": 89,
+          "basis": "CBO AGI surtax option, alternative 2: $89.1B in 2026",
+          "source": "https://www.cbo.gov/budget-options/60938"
+        }
+      ]
+    },
+    "long_term_care_from_2032": {
+      "measure": "Dedicated long-term care contribution, about 4% of earnings paid like the Medicare tax, plus the states' long-term care share of Medicaid",
+      "yield_net": 635,
+      "need": 599
+    },
+    "scoring_caveats": "All CBO yields are static; scaling a one-point option by five or seven overstates yield because behavioral responses grow with the rate; dynamic feedback from lower hours would reduce income and payroll receipts; the $179B margin is the only allowance"
   },
   "transition": {
     "years": 8,
-    "principle": "Each pillar's benefits switch on only after its revenue is in place",
+    "principle": "Each pillar's benefits switch on only after its revenue is collected, in statute; the revenue measures lead by one year so the first two years are net deficit-reducing",
     "milestones": [
-      {"date": "2027", "event": "Revenue package enacted; Floor card and food credit live; free school meals; free community college and training; Housing Development Authority chartered; Housing First surge begins; drug prices set and uninsured enrolled"},
-      {"date": "2028", "event": "Medicare for everyone under 26 and over 55"},
-      {"date": "2029", "event": "Everyone covered; 200,000 public homes a year begins"},
-      {"date": "2030", "event": "Zero cost sharing, dental and vision; rent guarantee becomes an entitlement; free four-year public college"},
-      {"date": "2032", "event": "Long-term care phased in"},
-      {"date": "2035", "event": "Full operation"}
+      {
+        "date": "2027",
+        "event": "Revenue package enacted; Floor card and food credit live; free school meals; free community college and training; Housing Development Authority chartered, Faircloth cap repealed; Housing First surge begins; drug prices set and uninsured enrolled"
+      },
+      {
+        "date": "2028",
+        "event": "Medicare for everyone under 26 and over 55, with the household and employer contributions phased in by cohort"
+      },
+      {
+        "date": "2029",
+        "event": "Everyone covered; 200,000 public homes a year begins"
+      },
+      {
+        "date": "2030",
+        "event": "Zero cost sharing; rent guarantee becomes an entitlement; free four-year public college"
+      },
+      {
+        "date": "2032",
+        "event": "Long-term care enters, with its own contribution"
+      },
+      {
+        "date": "2035",
+        "event": "Full operation"
+      }
     ]
   },
   "macro": {
-    "hours_worked": "2% to 4% lower, concentrated among caregivers, students, the sick and people over 60",
-    "gdp_2030_vs_path": "within 1% below to 1.5% above, when financing replaces premiums rather than stacking rates on labor (CBO 2022 single-payer modeling)",
-    "public_social_spending_share_of_gdp": {"before": 0.198, "after": 0.27, "oecd_average": 0.212},
-    "net_total_social_spending_share_of_gdp": {"us": 0.332, "france": 0.320, "oecd_average": 0.226, "source": "https://db.nomics.world/OECD/DSD_SOCX_AGG@DF_NET_GDP"}
+    "hours_worked": "CBO's single-payer base case (financed by cutting other purchases): 3.6% to 4.7% lower in 2030; tax financing lowers hours further and the Floor adds tapered benefits, so the working assumption is 5% to 7% lower",
+    "marginal_rates": "the contributions replace a lump-sum premium with proportional levies, so marginal tax rates on labor rise by about 12.5 points for workers at employers above the exemption (5 household, 7.5 employer-side), about 4 more when the long-term care contribution begins, plus about 3 effective points from the VAT; premiums carried no marginal rate",
+    "gdp_vs_path": "CBO: deficit-neutral single payer -0.3% to +1.8% (Table 6); its cheapest system financed by payroll or income taxes -1.2% to -2.8% (Table 9); its system with long-term care so financed -6.7% to -10.4%. The Floor's health pillar costs more than CBO's cheapest system and is financed mostly by taxes on labor and consumption, so the honest expectation is GDP 2% to 4% below path for the core Floor, and further below it once long-term care enters; the VAT, corporate, wealth and deduction measures distort labor less than CBO's modeled taxes, and the health and productivity gains CBO counts pull the other way",
+    "after_tax_wages": "CBO's +11.5% comes from employer premiums becoming wages with no new levy; under the Floor the employer contribution takes most of that money, so wages are roughly flat from the employer side and household gains come from premiums and bills ending, net of the contribution and VAT",
+    "public_social_spending_share_of_gdp": {
+      "before": 0.198,
+      "after_core": 0.264,
+      "after_full_operation": 0.281,
+      "oecd_average": 0.212
+    },
+    "net_total_social_spending_share_of_gdp": {
+      "us": 0.332,
+      "france": 0.32,
+      "oecd_average": 0.226,
+      "source": "https://db.nomics.world/OECD/DSD_SOCX_AGG@DF_NET_GDP"
+    }
+  },
+  "household_ledger_examples_2025_dollars": {
+    "method": "ledger.js on this site; range runs from none of the employer's net change reaching pay to all of it after tax",
+    "family_of_four_80k_employer_family_plan": [
+      6856,
+      17654
+    ],
+    "family_of_four_250k_employer_family_plan": [
+      -6161,
+      -5178
+    ],
+    "family_of_four_1M_employer_family_plan": [
+      -115356,
+      -83786
+    ],
+    "single_45k_renter_1200_employer_single_plan": [
+      5247,
+      8690
+    ],
+    "single_parent_30k_two_children_medicaid_rent_1400": [
+      15011,
+      16729
+    ],
+    "single_150k_employer_single_plan": [
+      -10868,
+      -8703
+    ],
+    "single_60k_self_employed_own_plan_7000": [
+      4460,
+      4460
+    ],
+    "retired_couple_40k_medicare": [
+      7593,
+      7593
+    ],
+    "break_even_incomes_approx": {
+      "family_of_four_employer_family_plan": 170000,
+      "single_employer_single_plan": [
+        45000,
+        70000
+      ],
+      "single_wage_earner_uninsured_no_rent_burden": 30000,
+      "family_of_four_uninsured_wage_earners_renting_1500": 90000
+    }
+  },
+  "residency": {
+    "costing_base": "the full Census resident population, including the roughly 11 to 14 million people without legal status (3-4% of the base and of the bill)",
+    "alternative": "excluding them saves about 3% and requires status verification at every point of delivery"
   },
   "key_risks": [
-    "Provider payment rates: ±300 on the federal health line (the largest uncertainty)",
-    "Long-term care timing: +500 federal when it arrives",
-    "Wealth tax struck down or avoided: −180 of revenue (fallback: VAT)",
-    "Stacked tapers on households just above poverty: fixed by a single Floor taper at about 25 cents on the dollar, +40 to +60",
-    "Rent capture before supply arrives; construction labor capacity; health cost growth above GDP if global budgets are not held",
-    "State capacity: the program needs an authority that builds, a payer that holds a budget and a tax agency that can run a taper"
+    "Provider payment rates: the lower-rate system is a 13% cut in average hospital payment and 7% for physicians; at today's rates the federal line is $627B higher and the package does not close (Vermont 2014, Colorado 2016)",
+    "Revenue scoring: static, linearly scaled, rebased by a single factor; the $179B margin is the only allowance",
+    "Wealth tax struck down or avoided: -$180B; the package then balances with no margin (fallback: a larger VAT or a 6% household contribution)",
+    "Rent capture before supply arrives; the payment standard, the taper and the year-four start are the defenses",
+    "Health cost growth above GDP if global budgets are not held",
+    "State capacity: an authority that builds, a payer that holds a budget, a tax agency that runs a taper; states cannot be compelled to pay the maintenance of effort",
+    "Marginal rates on labor rise even where average burdens fall; in CBO's framework the growth effect is negative, probably by several percent of GDP at full operation",
+    "Not everyone comes out ahead in cash: single earners above about $45,000 to $70,000 on employer plans, uninsured wage earners above about $30,000 without a rent burden, and households above about $170,000 generally pay more than they get back"
   ]
 }

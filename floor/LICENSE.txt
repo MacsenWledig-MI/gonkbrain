@@ -1,4 +1,4 @@
-The Floor (October 2026): the pamphlet, the economic package, the costing data, the calculator and its arithmetic, and the source files in this folder are dedicated to the public domain under the Creative Commons CC0 1.0 Universal dedication.
+The Floor (2026 editions): the pamphlet, the economic package, the costing data, the calculator and its arithmetic, and the source files in this folder are dedicated to the public domain under the Creative Commons CC0 1.0 Universal dedication.
 
 https://creativecommons.org/publicdomain/zero/1.0/
 

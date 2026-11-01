@@ -6,19 +6,23 @@
 
 - [The Floor, overview](https://gonkbrain.org/floor/): the idea, the bill, the funding, two short answers to the common objections.
 - [The Floor, plain text](https://gonkbrain.org/floor/the-floor.md): the full five-page pamphlet as Markdown.
-- [The Floor: Economic Package](https://gonkbrain.org/floor/package.html): the costing and revenue design in full (plain text: [economic-package.md](https://gonkbrain.org/floor/economic-package.md)), with a source link for every figure (CBO, CMS, HUD, Census, USDA, OECD, KFF and others, as of October 2026).
+- [The Floor: Economic Package](https://gonkbrain.org/floor/package.html): the costing and revenue design in full (plain text: [economic-package.md](https://gonkbrain.org/floor/economic-package.md)), with a source link for every figure (CBO, CMS, HUD, Census, USDA, OECD, KFF and others, as of November 2026).
 - [Costing as data](https://gonkbrain.org/floor/data/costing.json): pillars, net new spending with ranges, revenue lines with yields and sources, transition milestones, key risks.
 - [What the Floor costs you](https://gonkbrain.org/floor/calculator.html): a household calculator; its arithmetic is in [ledger.js](https://gonkbrain.org/floor/ledger.js).
-- [The pamphlet as PDF](https://gonkbrain.org/floor/the-floor-october-2026.pdf): five Letter pages.
+- [The pamphlet as PDF](https://gonkbrain.org/floor/the-floor-november-2026.pdf): five Letter pages.
 
-## Key figures (2025 dollars, full operation)
+## Key figures (2025 dollars; costs at CBO's lower provider payment rates unless stated)
 
-- Net new public spending: about $2.2 trillion a year (range $1.7–2.4T), 7.2% of GDP.
-- Of which $1.8 trillion replaces premiums, medical bills and state Medicaid payments that end; net new claim on real resources close to zero (range −$360B to +$390B).
-- Pillars: medical care $1,800B; housing $180B; food $150B; education $90B.
-- Revenue: $1.52T from contributions that replace premiums (employers 7.5% of payroll, households 4% of income above $20k/$40k, states' Medicaid share); $0.68T from a progressive package (deductions cap, wealth tax, corporate rate, IRS, brackets, gains at death, transaction tax); reserves and a VAT alternative named.
-- Design rules: universal in right, income-rated in contribution; goods and services rather than cash; supply programs paired with every guarantee; federal guarantee, local delivery; each pillar carries its own revenue; eight-year transition, revenue first.
+- Net new federal spending for the four guarantees: about $2.3 trillion a year (7.4% of GDP) at CBO's lower provider payment rates; $2.9 trillion (9.4%) at today's rates; range $2.2–3.1T. Long-term care adds $599B from 2032, so full operation (2035) is $2.9–3.5T.
+- Of which $1.9 trillion replaces employer premiums ($753B), household premiums ($600B) and out-of-pocket bills ($300B) and state Medicaid payments ($260B) that end.
+- National health spending changes by −$645B (lower rates) or −$37B (today's rates); net new claim on real resources −$142B to +$466B for the core Floor, +$190B to +$798B at full operation with long-term care.
+- Pillars: medical care $1,785B / $2,412B; housing $200B; food $140B; education $73B; a single taper for food and rent $90B.
+- Revenue, first-year levels: $1.38T from contributions that replace premiums (employers 7.5% of payroll above the first $2M, $500B net; households 5% of income above $20k/$40k, $622B; states' Medicaid share, $260B); $0.62T from a progressive package (deductions cap, wealth tax, corporate rate, IRS, brackets, gains at death, transaction tax); $0.46T from a closing tier (5% VAT $294B, carbon fee $80B, 2-point surtax above $100k/$200k $89B). Total $2.47T.
+- The package closes at the lower payment rates with a $179B margin (no margin if the wealth tax falls) and is about $450B short at today's rates; it states this rather than hiding it.
+- Household ledger (calculator): a family of four at $80,000 with an employer family plan is $7,000–18,000 a year ahead; a single worker on an employer single plan is ahead only below about $45,000–70,000; a family of four at $250,000 is $5,000–6,000 behind; at $1 million, $85,000–115,000 behind.
+- Macro: hours worked 5–7% lower (CBO's single-payer base case 3.6–4.7%); marginal tax rates on labor rise about 12.5 points; GDP in CBO's framework a few percent below path, not above it.
+- Design rules: universal in right, income-rated in contribution; goods and services rather than cash; supply programs paired with every guarantee; federal guarantee, local delivery; each pillar carries its own revenue; eight-year transition, revenue first; residency costed for the whole Census population.
 
 ## How to cite
 
-The Floor (October 2026), gonkbrain.org/floor. Public domain; attribution welcome, not required.
+The Floor (November 2026), gonkbrain.org/floor. Public domain; attribution welcome, not required.
