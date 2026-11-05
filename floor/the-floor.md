@@ -42,19 +42,19 @@ Everyone is covered. Everyone pays in, by income. Most households come out ahead
 | Measure | $B a year |
 | --- | --- |
 | Employers: 7.5% of payroll above the first $2 million | 500 |
-| Households: 5% of income above $20,000 / $40,000 | 622 |
+| Households: 5% of income above $20,000 / $40,000 | 600 |
 | States: today's Medicaid share, continued | 260 |
 
 **What the top pays** ($0.6 trillion a year, from capital, wealth and tax breaks; CBO's own scores where it has them):
 
 | Measure | $B a year |
 | --- | --- |
-| Cap itemized deductions at 15% | 166 |
+| Cap itemized deductions at 15% | 100 |
 | Wealth tax: 2% above $50M, 3% above $1B | 180 |
-| Corporate rate to 28%; a rebuilt IRS | 153 |
-| Top brackets up 2 points; gains taxed at death; a 0.01% transaction tax | 123 |
+| Corporate rate to 28%; a rebuilt IRS | 155 |
+| Top brackets up 2 points; gains taxed at death; a 0.01% transaction tax | 125 |
 
-**The arithmetic closes at one price, and not the other.** A 5% VAT ($294B), a carbon fee ($80B) and a 2-point surtax above $100,000 ($89B) complete it: $2.47 trillion against $2.29 trillion at CBO's lower payment rates, a margin of $180 billion that vanishes if the wealth tax falls. At today's payment rates the bill is $2.9 trillion and the package is $450 billion short. Vermont's plan died in 2014 when its financing was published; this one publishes first.
+**The arithmetic closes at one price, and not the other.** A 5% VAT ($320B), a carbon fee ($80B) and a 2-point surtax above $100,000 ($86B) complete it: $2.40 trillion against $2.29 trillion at CBO's lower payment rates, a margin of about $115 billion; if the wealth tax falls, the package is $65 billion short. At today's payment rates the bill is $2.9 trillion and the package is $510 billion short. Vermont's plan died in 2014 when its financing was published; this one publishes first.
 
 **The household ledger.** An $80,000 family of four: now about $10,500 a year in premium share and bills; after, a $2,000 contribution and $1,900 of VAT, plus wages from the $14,000 its employer stops paying; ahead $7,000 to $18,000 a year. A $75,000 single worker on an employer single plan: a $1,440 premium and $900 of bills end; a $2,750 contribution and $1,800 of VAT begin; behind $700 to $2,200 a year, for coverage that can't be lost with the job; ahead only below about $45,000 to $70,000. A $250,000 household: contribution $10,500, VAT $4,900, surtax $1,000, against $10,450 of premiums and bills that end; behind $5,000 to $6,000, more once deductions are capped; at $1 million, $85,000 to $115,000.
 

@@ -1,14 +1,14 @@
 {
   "name": "The Floor: costing and revenue package",
-  "version": "2026-11-01",
-  "supersedes": "2026-10-28",
+  "version": "2026-11-04",
+  "supersedes": "2026-11-01",
   "license": "CC0-1.0",
   "url": "https://gonkbrain.org/floor/",
   "full_text": "https://gonkbrain.org/floor/package.html",
   "conventions": {
     "units": "USD billions per year",
     "costs": "CBO's 2030 single-payer estimates (Working Paper 2020-08) are used at 2025 scale: CBO's projected 2030 GDP (about $30.8 trillion) is nearly identical to actual 2025 GDP ($30.86 trillion). Other cost lines are 2025 dollars.",
-    "revenue": "first-year (2026) levels: CBO's own 2026 figure where its option tables give one; otherwise CBO ten-year averages rebased by 0.87, CBO's ratio of its 2026 to ten-year-average yield for a 1-point AGI surtax ($124.4B vs $144B). Employer-side levies are counted net of the income and payroll tax they displace by lowering taxable wages (about a third).",
+    "revenue": "2025 scale: CBO's own figure for the first full-effect year of each option (2026, or 2027 for options that start in January 2026), deflated to 2025 by CBO's projected nominal growth of about 4% a year; the employer levy is computed on 2025 wages. Employer-side levies are counted net of the income and payroll tax they displace by lowering taxable wages (about a third). Where a December 2024 CBO option was scored on a baseline in which the 2017 tax act expired after 2025, and the July 2025 law has since made that act permanent, the line is counted lower and says so.",
     "gdp_2025_billions": 30861,
     "gdp_source": "https://fred.stlouisfed.org/series/GDPA",
     "full_operation": "year eight (2035), which includes long-term care from 2032; the core bill is the four guarantees before long-term care enters"
@@ -33,11 +33,11 @@
       0.094,
       0.114
     ],
-    "revenue_as_designed_including_vat": 2467,
-    "revenue_without_vat": 2173,
-    "revenue_without_wealth_tax": 2287,
-    "margin_at_lower_rates": 179,
-    "shortfall_at_higher_rates": 448,
+    "revenue_as_designed_including_vat": 2404,
+    "revenue_without_vat": 2084,
+    "revenue_without_wealth_tax": 2224,
+    "margin_at_lower_rates": 116,
+    "shortfall_at_higher_rates": 511,
     "private_and_state_spending_replaced_core": 1913,
     "private_and_state_spending_replaced_full_operation": 2127,
     "change_in_national_health_spending_core": [
@@ -56,7 +56,8 @@
       190,
       798
     ],
-    "note": "The package closes at CBO's lower provider payment rates with a 5% VAT as a core measure and a $179B margin; if the wealth tax falls, the margin is gone and it still balances. At payment rates near today's average it does not close; the shortfall is about $450B and is stated, not hidden."
+    "note": "The package closes at CBO's lower provider payment rates with a 5% VAT as a core measure and a $116B margin; if the wealth tax falls it is about $64B short. At payment rates near today's average it does not close; the shortfall is about $511B and is stated, not hidden.",
+    "shortfall_without_wealth_tax": 64
   },
   "pillars": [
     {
@@ -208,7 +209,7 @@
   ],
   "revenue": {
     "tier_a_contributions_replacing_premiums": {
-      "total": 1382,
+      "total": 1358,
       "lines": [
         {
           "measure": "Employer health contribution, 7.5% of payroll above each employer's first $2 million; the self-employed pay only the household contribution",
@@ -219,8 +220,8 @@
         },
         {
           "measure": "Household health contribution, 5% of income above $20,000 single / $40,000 joint",
-          "yield_net": 622,
-          "basis": "CBO AGI surtax option, alternative 1: $124.4B per point in 2026",
+          "yield_net": 598,
+          "basis": "CBO AGI surtax option, alternative 1: $124.4B per point in 2026, five points, deflated to 2025 scale (÷1.04)",
           "source": "https://www.cbo.gov/budget-options/60938"
         },
         {
@@ -232,11 +233,16 @@
       ]
     },
     "tier_b_progressive_package": {
-      "total": 622,
+      "total": 560,
       "lines": [
         {
           "measure": "Cap the tax value of itemized deductions at 15%",
-          "yield_net": 166,
+          "yield_net": 100,
+          "range": [
+            60,
+            150
+          ],
+          "basis": "CBO's option was scored on its 2024 baseline, in which the 2017 tax act expired after 2025: uncapped SALT and roughly three times as many itemizers from 2026, giving $134.9B in 2026 and $184.1B in 2027. The July 2025 law made the 2017 structure permanent with a $40,000 SALT cap, so far fewer deductions exist to cap; CBO's own 2025 row under the 2017 rules is $41.5B for a partial year. $100B is this package's judgment and, after the wealth tax, its least certain line.",
           "source": "https://www.cbo.gov/budget-options/60939"
         },
         {
@@ -247,7 +253,8 @@
         },
         {
           "measure": "Corporate income tax from 21% to 28%",
-          "yield_net": 83,
+          "yield_net": 85,
+          "basis": "CBO: $12.7B per point in 2026, seven points, deflated to 2025 scale",
           "source": "https://www.cbo.gov/budget-options/60956"
         },
         {
@@ -259,38 +266,43 @@
         {
           "measure": "Top four individual brackets up 2 points",
           "yield_net": 50,
+          "basis": "CBO: $53.0B in 2026 on the expiry baseline; $45.1B in 2025 for a partial year under the 2017 rules; counted at $50B",
           "source": "https://www.cbo.gov/budget-options/60937"
         },
         {
-          "measure": "Tax capital gains at death",
+          "measure": "Tax capital gains at death (accrued gains on the decedent's final return)",
           "yield_net": 47,
+          "basis": "CBO alternative 2: $48.7B in 2026, deflated to 2025 scale",
           "source": "https://www.cbo.gov/budget-options/60943"
         },
         {
           "measure": "Financial transaction tax, 0.01%",
-          "yield_net": 26,
+          "yield_net": 28,
+          "basis": "CBO: the tax starts in 2026 and matures by 2028 ($32.7B); counted at the mature yield deflated to 2025 scale",
           "source": "https://www.cbo.gov/budget-options/60966"
         }
       ]
     },
     "tier_c_closing_measures": {
-      "total": 463,
+      "total": 486,
       "lines": [
         {
           "measure": "5% value-added tax, broad base",
-          "yield_net": 294,
+          "yield_net": 320,
           "source": "https://www.cbo.gov/budget-options/60961",
-          "alternative": "a household contribution of 7% instead of 5% raises about the same ($249B more)"
+          "alternative": "a household contribution of 7% instead of 5% raises about $240B more, most of the same",
+          "basis": "CBO: the option takes effect in January 2026; $230B in the partial first year, $350B in 2027, the first full year, deflated to 2025 scale"
         },
         {
           "measure": "Carbon fee, $25 a ton rising 5% a year",
           "yield_net": 80,
-          "source": "https://www.cbo.gov/budget-options/60962"
+          "source": "https://www.cbo.gov/budget-options/60962",
+          "basis": "CBO alternative 1: $81.3B in 2026; the rate rises 5% a year plus inflation, so the yield grows to about $84B at 2025 scale by 2034"
         },
         {
           "measure": "2-point surtax on income above $100,000 single / $200,000 joint",
-          "yield_net": 89,
-          "basis": "CBO AGI surtax option, alternative 2: $89.1B in 2026",
+          "yield_net": 86,
+          "basis": "CBO AGI surtax option, alternative 2: $89.1B in 2026, deflated to 2025 scale",
           "source": "https://www.cbo.gov/budget-options/60938"
         }
       ]
@@ -300,7 +312,7 @@
       "yield_net": 635,
       "need": 599
     },
-    "scoring_caveats": "All CBO yields are static; scaling a one-point option by five or seven overstates yield because behavioral responses grow with the rate; dynamic feedback from lower hours would reduce income and payroll receipts; the $179B margin is the only allowance"
+    "scoring_caveats": "All CBO yields are static; scaling a one-point option by five or seven overstates yield because behavioral responses grow with the rate; dynamic feedback from lower hours would reduce income and payroll receipts; two lines (the itemized-deduction cap and the top brackets) were scored by CBO on a baseline the July 2025 tax law has since changed and are counted lower here by judgment; the $116B margin is the only allowance"
   },
   "transition": {
     "years": 8,
@@ -400,8 +412,9 @@
   },
   "key_risks": [
     "Provider payment rates: the lower-rate system is a 13% cut in average hospital payment and 7% for physicians; at today's rates the federal line is $627B higher and the package does not close (Vermont 2014, Colorado 2016)",
-    "Revenue scoring: static, linearly scaled, rebased by a single factor; the $179B margin is the only allowance",
-    "Wealth tax struck down or avoided: -$180B; the package then balances with no margin (fallback: a larger VAT or a 6% household contribution)",
+    "Revenue scoring: static, linearly scaled, deflated to 2025 scale by a single factor; the $116B margin is the only allowance",
+    "Wealth tax struck down or avoided: -$180B; the package is then about $64B short (fallback: a larger VAT or a 6% household contribution)",
+    "Itemized-deduction cap: CBO scored it on a baseline the 2025 tax law changed; counted at $100B against CBO's $184B, range $60-150B",
     "Rent capture before supply arrives; the payment standard, the taper and the year-four start are the defenses",
     "Health cost growth above GDP if global budgets are not held",
     "State capacity: an authority that builds, a payer that holds a budget, a tax agency that runs a taper; states cannot be compelled to pay the maintenance of effort",
