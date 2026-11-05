@@ -3,36 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gonkbrain.org</title>
-<meta name="description" content="gonkbrain.org. Home of The Floor, a costed universal guarantee of housing, food, medical care and education.">
-<link rel="canonical" href="https://gonkbrain.org/">
+<title>The Floor</title>
+<meta name="description" content="A society rich enough to prevent destitution has no right to use destitution as leverage. The Floor: a universal guarantee of housing, food, medical care and education, with no means tests, costed and funded. Public domain.">
+<link rel="canonical" href="https://gonkbrain.org/floor/">
+<meta property="og:title" content="The Floor">
+<meta property="og:description" content="A universal guarantee of housing, food, medical care and education. No means tests. Costed, funded, and free to take.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gonkbrain.org/floor/">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/pdf" href="./the-floor-november-2026.pdf" title="The Floor (November 2026), five pages">
+<link rel="alternate" type="text/markdown" href="./the-floor.md" title="The Floor, plain text">
+<link rel="alternate" type="text/markdown" href="./economic-package.md" title="The Floor: Economic Package">
+<link rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Floor","alternativeHeadline":"A portable case for universal material security","url":"https://gonkbrain.org/floor/","datePublished":"2026-10-29","dateModified":"2026-11-04","inLanguage":"en","license":"https://creativecommons.org/publicdomain/zero/1.0/","isAccessibleForFree":true,"about":["universal basic services","single-payer health care","housing guarantee","food security","tuition-free public college","means testing","automation and labor"],"keywords":"the Floor, universal provision, universal basic services, no means tests, housing first, single payer, Medicare for All, free college, SNAP, cost estimate, revenue package","abstract":"A universal guarantee of housing, food, medical care and education for every resident of the United States, with no means tests, delivered as goods and services rather than cash. Costed at about $2.3 trillion a year in new federal spending (7.4% of GDP) at CBO's lower provider payment rates, or $2.9 trillion at today's rates, of which $1.9 trillion replaces premiums, medical bills and state Medicaid payments that end; long-term care adds $600 billion from 2032. Net new cost to the country: about zero at the lower rates, 1.5% of GDP at today's. Funded by contributions that replace premiums (7.5% of payroll from employers, 5% of income above $20,000/$40,000 from households, the states' Medicaid share), a progressive package on capital, wealth and tax expenditures, and a 5% VAT; the package closes at the lower payment rates with a margin of about $115 billion and is about $510 billion short at today's. Most households come out ahead in cash; single earners above the middle and households above about $170,000 do not. Sources: CBO, CMS, HUD, Census, USDA, OECD, KFF.","hasPart":[{"@type":"DigitalDocument","name":"The Floor (November 2026)","url":"https://gonkbrain.org/floor/the-floor-november-2026.pdf","encodingFormat":"application/pdf"},{"@type":"Article","name":"The Floor: Economic Package","url":"https://gonkbrain.org/floor/package.html","encoding":[{"@type":"MediaObject","contentUrl":"https://gonkbrain.org/floor/economic-package.md","encodingFormat":"text/markdown"}]},{"@type":"Dataset","name":"The Floor costing, machine-readable","url":"https://gonkbrain.org/floor/data/costing.json","encodingFormat":"application/json","license":"https://creativecommons.org/publicdomain/zero/1.0/"},{"@type":"WebApplication","name":"What the Floor costs you","url":"https://gonkbrain.org/floor/calculator.html"}],"citation":["https://www.cbo.gov/publication/56811","https://www.cbo.gov/system/files/2022-02/57637-Single-Payer-Systems.pdf","https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet","https://www.hud.gov/news/hud-no-26-037","https://www.census.gov/housing/hvs/files/qtr326/Q326press.pdf","https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf","https://www.cbo.gov/publication/60557","https://db.nomics.world/OECD/DSD_SOCX_AGG@DF_NET_GDP"]}
+</script>
 <style>
-:root{--ink:#15171C;--quiet:#4A4F58;--accent:#1E4ED8;--paper:#FFFFFF}
+:root{--ink:#15171C;--quiet:#4A4F58;--rule:#15171C;--accent:#1E4ED8;--paper:#FFFFFF;--tint:#F3F5FA}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--paper);color:var(--ink)}
-body{font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
-main{flex:1;max-width:1000px;width:100%;margin:0 auto;padding:22px 16px 40px}
-.top{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet)}
-h1{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(56px,12vw,120px);line-height:.9;letter-spacing:-.01em;text-transform:uppercase;margin:18px 0 0;color:var(--ink)}
-.item{margin-top:40px;border-top:2px solid var(--ink);padding-top:14px;max-width:760px}
-.item a.t{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(32px,6vw,52px);font-weight:700;line-height:1;text-transform:uppercase;color:var(--accent);text-decoration:none}
-.item a.t:hover{color:var(--ink)}
-.item p{margin:10px 0 0;font-size:19px;font-style:italic;text-wrap:balance}
-footer{max-width:1000px;width:100%;margin:0 auto;padding:16px 16px 32px;border-top:2px solid var(--ink);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--quiet)}
+body{font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.5}
+a{color:var(--accent)}a:hover{color:var(--ink)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+header.top{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+header.top span{color:var(--quiet)}
+h1{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(84px,18vw,180px);line-height:.88;letter-spacing:-.01em;text-transform:uppercase;color:var(--accent);margin:18px 0 0}
+p.lede{font-size:clamp(22px,3.2vw,30px);line-height:1.3;font-style:italic;margin:14px 0 0;max-width:820px;text-wrap:balance}
+section{margin-top:34px;border-top:2px solid var(--rule);padding-top:16px}
+h2.k{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;line-height:18px}
+h2.big{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(30px,5vw,44px);font-weight:700;line-height:1;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+p{margin:0 0 14px;text-wrap:pretty;max-width:760px}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:6px}
+@media (max-width:760px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.col{border-top:4px solid var(--accent);padding-top:10px}
+.col h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:24px;font-weight:700;line-height:1.1;text-transform:uppercase;margin:0 0 4px}
+.col p{font-size:16px;line-height:1.4;margin:0}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+@media (max-width:760px){.two{grid-template-columns:1fr;gap:24px}}
+.two h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:24px;font-weight:700;line-height:1.15;text-transform:uppercase;margin:0 0 8px}
+.two p{font-size:17px;line-height:1.45}
+.pull{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(24px,3.4vw,30px);font-weight:600;line-height:1.15;color:var(--accent);text-wrap:balance;margin:6px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{border-top:1px solid var(--rule);padding-top:10px}
+.stat .n{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:44px;font-weight:700;line-height:1;color:var(--accent)}
+.stat .l{font-size:14px;line-height:1.4;color:var(--quiet);margin-top:4px}
+.bill{border:2px solid var(--rule);padding:16px 20px;margin-top:22px}
+.bill p{font-size:17px;margin:4px 0 0;max-width:none}
+.bill b{font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:10px 18px;background:var(--ink);color:#fff;text-decoration:none;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
+.btn:hover{background:var(--accent);color:#fff}
+.btn.alt{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.btn.alt:hover{border-color:var(--accent);color:var(--accent);background:#fff}
+.qa h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:22px;font-weight:700;line-height:1.15;margin:0 0 6px}
+.qa p{font-size:17px}
+.steal{background:var(--tint);padding:18px 20px;margin-top:22px}
+.steal p{font-size:16px;margin:0 0 8px;max-width:none}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;background:#fff;padding:2px 5px;border:1px solid #D7DAE0}
+.close{border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:18px 0 20px;margin-top:34px}
+.close .i{font-size:20px;font-style:italic;margin:0 0 6px}
+.close .b{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(56px,11vw,96px);font-weight:700;line-height:.95;text-transform:uppercase;color:var(--accent);margin:0}
+sup.fn{font-size:.65em;line-height:0;vertical-align:baseline;position:relative;top:-.55em;margin-left:1px}
+sup.fn a{text-decoration:none;color:var(--accent);padding:0 1px}sup.fn a:hover{text-decoration:underline}
+.notes ol{margin:0;padding-left:26px;font-size:14.5px;line-height:1.5;color:var(--quiet);max-width:860px}
+.notes li{margin:0 0 10px;padding-left:4px}.notes li:target{background:var(--tint)}
+.notes li a{color:var(--quiet);overflow-wrap:anywhere}.notes li a:hover{color:var(--ink)}
+.notes em{font-style:italic}.notes .back{text-decoration:none;margin-left:6px;color:var(--accent)}
+.notes p.intro{font-size:15px;color:var(--quiet);max-width:860px;margin:0 0 12px}
+footer{margin-top:28px;padding:16px 0 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--quiet)}
+footer a{color:var(--quiet);text-decoration:none}footer a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
-<main>
-<div class="top">gonkbrain.org</div>
-<h1>Gonk.</h1>
-<div class="item">
-<a class="t" href="/floor/">The Floor</a>
-<p>A society rich enough to prevent destitution has no right to use destitution as leverage. A universal guarantee of housing, food, medical care and education, costed and funded. Public domain.</p>
+<div class="wrap">
+<header class="top"><span style="color:var(--ink)">The Floor</span><span>November 2026</span></header>
+<article>
+<h1>The Floor</h1>
+<p class="lede">A society rich enough to prevent destitution has no right to use destitution as leverage.</p>
+
+<section>
+<h2 class="k">The idea in one paragraph</h2>
+<p>Every society wealthy enough to do it should guarantee a floor no one falls below: a home, enough food, medical care, and an education. Not as charity, but as the precondition for everything else. You cannot fully be a worker, a citizen, or a free person without it.</p>
+<div class="cols">
+<div class="col"><h3>Housing</h3><p>A home of your own, not a shelter bed.</p></div>
+<div class="col"><h3>Food</h3><p>Enough to eat, unconditionally.</p></div>
+<div class="col"><h3>Medical care</h3><p>Full coverage. No bill at the point of care.</p></div>
+<div class="col"><h3>Education</h3><p>College, a trade or an apprenticeship.</p></div>
 </div>
-<!-- Add more items here: copy the <div class="item"> block, change the link and the line. -->
-</main>
-<footer>gonkbrain.org</footer>
+</section>
+
+<section>
+<div class="two">
+<div>
+<h3>Universal means universal</h3>
+<p>Everyone who lives here gets it: no means tests, no sorting the deserving from the undeserving. Universal programs like Social Security endure; programs that sort people get stigmatized and cut.<sup class="fn" id="r1"><a href="#n1" aria-label="Note 1">1</a></sup> Everyone pays in, too, by income, on the tax return, never at an office window.</p>
+<p class="pull">The Floor does not abolish incentive. It abolishes desperation as an employment policy.</p>
+</div>
+<div>
+<h3>Why it doesn't exist yet</h3>
+<p>Cost and politics are part of it. Another part is that desperation does real work in our economy. When survival depends on taking any job on any terms, employers don't have to make jobs worth choosing. That gap is a hidden subsidy, paid by the people with the least and collected by everyone who buys their labor cheap. The Floor ends it. Below is the arithmetic.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="big">What it costs</h2>
+<div class="stats">
+<div class="stat"><div class="n">$14,885</div><div class="l">per person the U.S. spent on health care in 2024; Germany $9,365, France $7,367<sup class="fn" id="r2"><a href="#n2" aria-label="Note 2">2</a></sup></div></div>
+<div class="stat"><div class="n">3.9M</div><div class="l">homes vacant and for rent in autumn 2026, a 7.6% vacancy rate<sup class="fn" id="r3"><a href="#n3" aria-label="Note 3">3</a></sup></div></div>
+<div class="stat"><div class="n">29%</div><div class="l">of the U.S. food supply is wasted; 47.9 million people are food insecure<sup class="fn" id="r4"><a href="#n4" aria-label="Note 4">4</a></sup></div></div>
+<div class="stat"><div class="n">$80.7B</div><div class="l">collected in tuition and fees by public colleges in fiscal 2025<sup class="fn" id="r5"><a href="#n5" aria-label="Note 5">5</a></sup></div></div>
+</div>
+<div class="bill">
+<h2 class="k">The full bill</h2>
+<p><b>Total:</b> about $2.3 trillion a year in new federal spending for the four guarantees, 7.4% of GDP, if the health system pays providers at the lower of the two rates CBO has modeled; $2.9 trillion at today's rates; long-term care adds $600 billion from 2032.<sup class="fn" id="r6"><a href="#n6" aria-label="Note 6">6</a></sup> $1.9 trillion of it replaces premiums, bills and state Medicaid payments that end.<sup class="fn" id="r7"><a href="#n7" aria-label="Note 7">7</a></sup> Net new cost to the country: zero at the lower rates, 1.5% of GDP at today's.<sup class="fn" id="r8"><a href="#n8" aria-label="Note 8">8</a></sup> <b>Funding:</b> contributions that replace premiums (7.5% of payroll from employers, 5% of income above $20,000 single or $40,000 joint from households, the states' Medicaid share continued), taxes on capital, wealth and tax breaks, and a 5% VAT.<sup class="fn" id="r9"><a href="#n9" aria-label="Note 9">9</a></sup> It closes at the lower payment rates with a margin of about $115 billion, and is about $510 billion short at today's; the package says so.<sup class="fn" id="r10"><a href="#n10" aria-label="Note 10">10</a></sup> Most households come out ahead in cash: families, renters, the old and the poor gain, and the bill falls on the top, on the health industry's overhead, and on single earners above the middle.<sup class="fn" id="r11"><a href="#n11" aria-label="Note 11">11</a></sup></p>
+</div>
+<div class="actions">
+<a class="btn" href="./calculator.html">What it costs you</a>
+<a class="btn alt" href="./the-floor-november-2026.pdf">The pamphlet, five pages (PDF)</a>
+<a class="btn alt" href="./package.html">The economic package</a>
+</div>
+</section>
+
+<section class="qa">
+<h2 class="k">Two answers to keep in your pocket</h2>
+<div class="two">
+<div><h3>“How will you pay for it?”</h3><p>It's costed. The pamphlet's second and third pages carry the bill and the revenue; the <a href="./package.html">economic package</a> carries every figure, the page it came from, and the price at which the arithmetic stops closing. The country already spends more on social provision, public and private combined, than France.<sup class="fn" id="r12"><a href="#n12" aria-label="Note 12">12</a></sup> The Floor changes the channel more than the amount.</p></div>
+<div><h3>“That's communism.”</h3><p>No caseworker, no judgment, no office window: the Floor is the least intrusive form of provision ever proposed. It is the means-tested state that interrogates you. Universal benefit and universal contribution are one principle, and it is the same one Social Security has run on since 1935.<sup class="fn" id="r13"><a href="#n13" aria-label="Note 13">13</a></sup></p></div>
+</div>
+</section>
+
+<section>
+<h2 class="k">Take it</h2>
+<div class="steal">
+<p>Everything here is in the public domain (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>). Put your own name on the pamphlet, change the color, cut it to one page, translate it, argue with it.</p>
+<p>Sources: <a href="./the-floor.md">the pamphlet as plain text</a> · <a href="./source/pamphlet-print.html">the pamphlet as HTML</a> · <a href="./package.html">the economic package</a> (<a href="./economic-package.md">as Markdown</a>) · <a href="./data/costing.json">the costing as JSON</a> · <a href="./ledger.js">the calculator's arithmetic</a></p>
+<p>No permission needed and none to ask for.</p>
+</div>
+</section>
+
+<section class="notes" aria-labelledby="notes-h">
+<h2 class="k" id="notes-h">Notes</h2>
+<p class="intro">Citations follow Chicago notes style. Every figure on this page also links to its source inside <a href="./package.html">the economic package</a>, where the full bibliography is grouped by pillar.</p>
+<ol>
+<li id="n1">Walter Korpi and Joakim Palme, &ldquo;The Paradox of Redistribution and Strategies of Equality: Welfare State Institutions, Inequality, and Poverty in the Western Countries,&rdquo; <em>American Sociological Review</em> 63, no. 5 (1998): 661&ndash;87, <a href="https://doi.org/10.2307/2657333">https://doi.org/10.2307/2657333</a>; Staffan Kumlin and Bo Rothstein, &ldquo;Making and Breaking Social Capital: The Impact of Welfare-State Institutions,&rdquo; <em>Comparative Political Studies</em> 38, no. 4 (2005): 339&ndash;65, <a href="https://doi.org/10.1177/0010414004273203">https://doi.org/10.1177/0010414004273203</a>. The first finds that targeted programs redistribute less and command weaker support than universal ones; the second that contact with means-tested institutions lowers social trust while contact with universal ones raises it. <a class="back" href="#r1" aria-label="Back to text">&#8617;</a></li>
+<li id="n2">Organisation for Economic Co-operation and Development, <em>Health at a Glance 2025: OECD Indicators</em> (Paris: OECD Publishing, November 13, 2025), table 1.6, health expenditure per capita, 2024, U.S. dollars at purchasing-power parity, <a href="https://www.oecd.org/en/publications/2025/11/health-at-a-glance-2025_a894f72e/full-report/indicator-overview-country-dashboards-and-major-trends_368ac397.html">https://www.oecd.org/en/publications/2025/11/health-at-a-glance-2025_a894f72e/full-report/indicator-overview-country-dashboards-and-major-trends_368ac397.html</a>, accessed November 4, 2026. <a class="back" href="#r2" aria-label="Back to text">&#8617;</a></li>
+<li id="n3">U.S. Census Bureau, &ldquo;Quarterly Residential Vacancies and Homeownership, Third Quarter 2026,&rdquo; news release CB26-161, October 28, 2026, table 3 (3,866,000 vacant units for rent) and the rental vacancy rate of 7.6 percent, <a href="https://www.census.gov/housing/hvs/files/qtr326/Q326press.pdf">https://www.census.gov/housing/hvs/files/qtr326/Q326press.pdf</a>, accessed November 4, 2026. <a class="back" href="#r3" aria-label="Back to text">&#8617;</a></li>
+<li id="n4">ReFED, <em>Progress on the Plate: 2026 ReFED U.S. Food Waste Report</em> (2026), reporting 70 million tons of surplus food in 2024, 29 percent of the supply, <a href="https://refed.org/uploads/2026-food-waste-report-design-final-1.pdf">https://refed.org/uploads/2026-food-waste-report-design-final-1.pdf</a>; Matthew P. Rabbitt, Madeline Reed-Jones, Laura J. Hales, Shellye Suttles, and Michael P. Burke, <em>Household Food Security in the United States in 2024</em>, Economic Research Report 358 (Washington, DC: U.S. Department of Agriculture, Economic Research Service, December 2025), reporting 47.9 million people in food-insecure households, 13.7 percent of households, <a href="https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf">https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf</a>; both accessed November 4, 2026. <a class="back" href="#r4" aria-label="Back to text">&#8617;</a></li>
+<li id="n5">State Higher Education Executive Officers Association, <em>State Higher Education Finance: FY 2025</em> (Boulder, CO: SHEEO, 2026), table 2.1, net tuition and fee revenue of $80,698 million at public institutions, $7,459 per full-time-equivalent student, <a href="https://shef.sheeo.org/wp-content/uploads/2026/04/SHEF_FY25_Report.pdf">https://shef.sheeo.org/wp-content/uploads/2026/04/SHEF_FY25_Report.pdf</a>, accessed November 4, 2026. <a class="back" href="#r5" aria-label="Back to text">&#8617;</a></li>
+<li id="n6">Congressional Budget Office, <em>How CBO Analyzes the Costs of Proposals for Single-Payer Health Care Systems That Are Based on Medicare&rsquo;s Fee-for-Service Program</em>, Working Paper 2020-08 (Washington, DC: CBO, December 10, 2020), exhibit 1-1 and section 2, <a href="https://www.cbo.gov/publication/56811">https://www.cbo.gov/publication/56811</a>, accessed November 4, 2026. The Floor&rsquo;s health pillar is CBO&rsquo;s Option 3 (hospitals paid 123 percent of Medicare&rsquo;s rates, no cost sharing) with the 3 percent drug copay removed; the higher figure is Option 4 (hospitals at 142 percent, roughly today&rsquo;s average); long-term care is Option 5 less Option 4. CBO&rsquo;s 2030 projections are used at 2025 scale because its projected 2030 economy is the size of the actual 2025 economy. The housing, food, education and single-taper lines are built up in <em>The Floor: Economic Package</em> (November 2026), <a href="./package.html#the-full-bill">gonkbrain.org/floor/package.html</a>, &ldquo;The full bill.&rdquo; <a class="back" href="#r6" aria-label="Back to text">&#8617;</a></li>
+<li id="n7">Centers for Medicare &amp; Medicaid Services, Office of the Actuary, &ldquo;NHE Fact Sheet,&rdquo; national health expenditure data for 2024 ($5.3 trillion, $15,474 per person, 18.0 percent of GDP), last modified June 24, 2026, <a href="https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet">https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet</a>; Allen Hardiman, <em>National Health Expenditures, 2024: Second Consecutive Year of Elevated Growth Driven by Increased Healthcare Utilization</em>, Policy Research Perspectives (Chicago: American Medical Association, July 2026), sponsor detail: employer premium contributions $753.1 billion, household premiums $468.4 billion plus Medicare premiums, household out-of-pocket spending $556.6 billion, state and local Medicaid $335.0 billion, <a href="https://www.ama-assn.org/system/files/prp-national-health-expenditures-increased-healthcare-utilization.pdf">https://www.ama-assn.org/system/files/prp-national-health-expenditures-increased-healthcare-utilization.pdf</a>; both accessed November 4, 2026. About $300 billion of out-of-pocket spending ends under CBO&rsquo;s Option 3; the rest is over-the-counter items, nursing-home private pay until 2032, and other non-covered care. <a class="back" href="#r7" aria-label="Back to text">&#8617;</a></li>
+<li id="n8">The change in national health spending is CBO&rsquo;s (note 6): &minus;$650 billion under Option 3 and &minus;$42 billion under Option 4 in 2030, less about $5 billion for the drug copay. Net new claim on real resources is that change plus the four non-health lines ($503 billion); the arithmetic is set out in <em>The Floor: Economic Package</em>, &ldquo;The full bill,&rdquo; <a href="./package.html#the-full-bill">gonkbrain.org/floor/package.html</a>, and in machine-readable form at <a href="./data/costing.json">gonkbrain.org/floor/data/costing.json</a>. <a class="back" href="#r8" aria-label="Back to text">&#8617;</a></li>
+<li id="n9">Congressional Budget Office, <em>Options for Reducing the Deficit: 2025 to 2034</em> (Washington, DC: CBO, December 12, 2024), with estimates by the staff of the Joint Committee on Taxation: &ldquo;Impose a Surtax on Individuals&rsquo; Adjusted Gross Income,&rdquo; <a href="https://www.cbo.gov/budget-options/60938">https://www.cbo.gov/budget-options/60938</a> (alternative 1, $124.4 billion per point in 2026; alternative 2, $89.1 billion in 2026); &ldquo;Impose a New Payroll Tax,&rdquo; <a href="https://www.cbo.gov/budget-options/60954">https://www.cbo.gov/budget-options/60954</a> ($118.2 billion per point in 2026); &ldquo;Impose a 5 Percent Value-Added Tax,&rdquo; <a href="https://www.cbo.gov/budget-options/60961">https://www.cbo.gov/budget-options/60961</a> ($350 billion in 2027, the first full year); all accessed November 4, 2026. Each line&rsquo;s derivation, the measures on capital, wealth and tax expenditures, and the two lines counted below CBO&rsquo;s score because the July 2025 tax law changed the baseline are in <em>The Floor: Economic Package</em>, &ldquo;Paying for it,&rdquo; <a href="./package.html#paying-for-it">gonkbrain.org/floor/package.html</a>. <a class="back" href="#r9" aria-label="Back to text">&#8617;</a></li>
+<li id="n10"><em>The Floor: Economic Package</em>, &ldquo;Paying for it&rdquo; and &ldquo;Risks, sensitivities, and where this could be wrong,&rdquo; <a href="./package.html#paying-for-it">gonkbrain.org/floor/package.html</a>: revenue of $2.40 trillion against a core bill of $2.29 trillion at CBO&rsquo;s lower payment rates; $2.92 trillion at today&rsquo;s. Vermont&rsquo;s Green Mountain Care was abandoned in December 2014 when its financing (an 11.5 percent payroll tax and an income-based premium up to 9.5 percent) was published; Colorado&rsquo;s Amendment 69 (a 10 percent payroll tax) failed 79&ndash;21 in November 2016. <a class="back" href="#r10" aria-label="Back to text">&#8617;</a></li>
+<li id="n11"><em>What the Floor Costs You</em>, the household ledger at <a href="./calculator.html">gonkbrain.org/floor/calculator.html</a>, whose constants and arithmetic are published at <a href="./ledger.js">gonkbrain.org/floor/ledger.js</a>; premium figures from KFF, <em>Employer Health Benefits: 2025 Annual Survey, Summary of Findings</em> (San Francisco: KFF, 2025), average premiums of $9,325 for single and $26,993 for family coverage, worker contributions of $1,440 and $6,850, <a href="https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf">https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf</a>, accessed November 4, 2026. Each result is a range from none of the employer&rsquo;s net change reaching pay to all of it after tax, as CBO models the end of employer premiums (note 6). The households that come out behind are named in the package, &ldquo;Who comes out ahead, and who does not,&rdquo; <a href="./package.html#who-comes-out-ahead-and-who-does-not">gonkbrain.org/floor/package.html</a>. <a class="back" href="#r11" aria-label="Back to text">&#8617;</a></li>
+<li id="n12">Organisation for Economic Co-operation and Development, <em>Social Expenditure Database (SOCX)</em>, net total social expenditure as a percentage of GDP (public and mandatory and voluntary private spending, net of taxes): United States 33.2, France 32.0, OECD average 22.6 (latest year), dataset DSD_SOCX_AGG@DF_NET_GDP, last updated October 6, 2025, via DBnomics, <a href="https://db.nomics.world/OECD/DSD_SOCX_AGG@DF_NET_GDP">https://db.nomics.world/OECD/DSD_SOCX_AGG@DF_NET_GDP</a>, accessed November 4, 2026. <a class="back" href="#r12" aria-label="Back to text">&#8617;</a></li>
+<li id="n13">Social Security Act, Pub. L. No. 74-271, 49 Stat. 620 (August 14, 1935), text at Social Security Administration, &ldquo;Social Security History,&rdquo; <a href="https://www.ssa.gov/history/35act.html">https://www.ssa.gov/history/35act.html</a>, accessed November 4, 2026. <a class="back" href="#r13" aria-label="Back to text">&#8617;</a></li>
+</ol>
+</section>
+<div class="close">
+<p class="b">Build the Floor.</p>
+</div>
+</article>
+<footer><span>A portable case for universal material security · November 2026</span><a href="../">gonkbrain.org</a></footer>
+</div>
 </body>
 </html>
